@@ -201,67 +201,67 @@
              class="hidden lg:block absolute left-0 right-0 top-2 bg-white rounded-2xl border border-sand shadow-2xl z-50 p-8">
             <div class="grid grid-cols-4 gap-8">
                 <div>
-                    <h3 class="nav-label font-bold text-charcoal border-b border-sand pb-2 mb-4">Sepatu</h3>
+                    <h3 class="nav-label font-bold text-charcoal border-b border-sand pb-2 mb-4">Kategori Parfum Pria</h3>
                     <ul class="space-y-3">
-                        <li><a href="{{ route('collections.show', 'men-everyday-sneakers') }}" class="text-body-sm text-iron hover:text-charcoal transition">Sneaker Sehari-hari</a></li>
-                        <li><a href="{{ route('collections.show', 'men-running-shoes') }}" class="text-body-sm text-iron hover:text-charcoal transition">Sepatu Lari</a></li>
-                        <li><a href="{{ route('collections.show', 'men-slip-ons-loungers') }}" class="text-body-sm text-iron hover:text-charcoal transition">Slip-On & Santai</a></li>
-                        <li><a href="{{ route('collections.show', 'men-water-repellent-shoes') }}" class="text-body-sm text-iron hover:text-charcoal transition">Sepatu Tahan Air</a></li>
-                        <li><a href="{{ route('collections.show', 'men-hiking-trail-shoes') }}" class="text-body-sm text-iron hover:text-charcoal transition">Sepatu Hiking & Trail</a></li>
+                        <li><a href="{{ route('collections.show', 'men-eau-de-parfum') }}" class="text-body-sm text-iron hover:text-charcoal transition">Eau de Parfum (EDP)</a></li>
+                        <li><a href="{{ route('collections.show', 'men-extrait-de-parfum') }}" class="text-body-sm text-iron hover:text-charcoal transition">Extrait de Parfum</a></li>
+                        <li><a href="{{ route('collections.show', 'men-woody-oud') }}" class="text-body-sm text-iron hover:text-charcoal transition">Woody & Smoky Oud</a></li>
+                        <li><a href="{{ route('collections.show', 'men-fresh-aquatic') }}" class="text-body-sm text-iron hover:text-charcoal transition">Fresh Aquatic & Citrus</a></li>
+                        <li><a href="{{ route('collections.show', 'men-spices-leather') }}" class="text-body-sm text-iron hover:text-charcoal transition">Aromatic Spices & Leather</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h3 class="nav-label font-bold text-charcoal border-b border-sand pb-2 mb-4">Pakaian & Aksesori</h3>
+                    <h3 class="nav-label font-bold text-charcoal border-b border-sand pb-2 mb-4">Discovery & Set Hadiah</h3>
                     <ul class="space-y-3">
-                        <li><a href="{{ route('collections.show', 'men-tees-tops') }}" class="text-body-sm text-iron hover:text-charcoal transition">Kaos & Atasan</a></li>
-                        <li><a href="{{ route('collections.show', 'men-sweats-hoodies') }}" class="text-body-sm text-iron hover:text-charcoal transition">Jaket & Hoodie</a></li>
-                        <li><a href="{{ route('collections.show', 'men-socks') }}" class="text-body-sm text-iron hover:text-charcoal transition">Kaos Kaki Wol Merino</a></li>
-                        <li><a href="{{ route('collections.show', 'bags-accessories') }}" class="text-body-sm text-iron hover:text-charcoal transition">Tas & Tote Bag</a></li>
+                        <li><a href="{{ route('collections.show', 'men-discovery-set') }}" class="text-body-sm text-iron hover:text-charcoal transition">Men's Discovery Set</a></li>
+                        <li><a href="{{ route('collections.show', 'men-travel-spray') }}" class="text-body-sm text-iron hover:text-charcoal transition">Travel Spray 10ml</a></li>
+                        <li><a href="{{ route('collections.show', 'men-body-mist') }}" class="text-body-sm text-iron hover:text-charcoal transition">Scented Body Mist</a></li>
+                        <li><a href="{{ route('collections.show', 'best-sellers') }}?gender=men" class="text-body-sm text-iron hover:text-charcoal transition">Parfum Pria Terlaris</a></li>
                     </ul>
                 </div>
 
-                <!-- Mega Menu Category Swatch Card 1: Men Tree Runner -->
-                <a href="{{ route('collections.show', 'tree-runners') }}" 
+                <!-- Mega Menu Category Swatch Card 1: Aurora Blue Marine -->
+                <a href="{{ route('products.show', 'mens-aurora-blue-marine-edp') }}" 
                    class="group relative rounded-[20px] bg-[#8b9aa4]/15 hover:bg-[#8b9aa4]/25 p-5 flex flex-col justify-between overflow-hidden min-h-[220px] border border-[#8b9aa4]/30 transition duration-300">
                     <div class="z-10">
                         <span class="inline-block bg-white text-charcoal rounded-full px-3 py-0.5 text-[10px] font-bold uppercase tracking-wider shadow-2xs">
-                            Tree Runner Go
+                            Aurora Blue Marine
                         </span>
-                        <p class="text-[12px] text-charcoal/80 font-medium mt-1.5 leading-snug">Serat eukaliptus sejuk & ringan untuk jalan seharian.</p>
+                        <p class="text-[12px] text-charcoal/80 font-medium mt-1.5 leading-snug">Kesegaran laut Calabria & kayu cedar alami.</p>
                     </div>
                     
                     <!-- Product Image -->
                     <div class="my-auto py-1 flex items-center justify-center">
                         <img src="{{ asset('images/products/tree-runner-blue.png') }}" 
-                             alt="Tree Runner Go" 
+                             alt="Aurora Blue Marine" 
                              class="h-24 w-auto object-contain drop-shadow-md group-hover:scale-110 transition-transform duration-300">
                     </div>
 
                     <span class="text-[11px] uppercase tracking-wider font-bold text-charcoal underline underline-offset-4 group-hover:opacity-80 transition inline-block">
-                        Beli Tree Runner Pria →
+                        Lihat Parfum Pria →
                     </span>
                 </a>
 
-                <!-- Mega Menu Category Swatch Card 2: Men Wool Runner -->
-                <a href="{{ route('collections.show', 'wool-runners') }}" 
+                <!-- Mega Menu Category Swatch Card 2: Obsidian Noir Oud -->
+                <a href="{{ route('products.show', 'mens-obsidian-noir-oud-extrait') }}" 
                    class="group relative rounded-[20px] bg-[#8a7466]/15 hover:bg-[#8a7466]/25 p-5 flex flex-col justify-between overflow-hidden min-h-[220px] border border-[#8a7466]/30 transition duration-300">
                     <div class="z-10">
                         <span class="inline-block bg-white text-charcoal rounded-full px-3 py-0.5 text-[10px] font-bold uppercase tracking-wider shadow-2xs">
-                            Wool Runner 2
+                            Obsidian Noir Oud
                         </span>
-                        <p class="text-[12px] text-charcoal/80 font-medium mt-1.5 leading-snug">Kenyamanan wol merino ZQ super lembut.</p>
+                        <p class="text-[12px] text-charcoal/80 font-medium mt-1.5 leading-snug">Gaharu Nusantara & kulit mewah konsentrasi 35%.</p>
                     </div>
 
                     <!-- Product Image -->
                     <div class="my-auto py-1 flex items-center justify-center">
-                        <img src="{{ asset('images/products/wool-runner-grey.png') }}" 
-                             alt="Wool Runner 2" 
+                        <img src="{{ asset('images/products/wool-runner-black.png') }}" 
+                             alt="Obsidian Noir Oud" 
                              class="h-24 w-auto object-contain drop-shadow-md group-hover:scale-110 transition-transform duration-300">
                     </div>
 
                     <span class="text-[11px] uppercase tracking-wider font-bold text-charcoal underline underline-offset-4 group-hover:opacity-80 transition inline-block">
-                        Beli Wool Runner Pria →
+                        Lihat Extrait Pria →
                     </span>
                 </a>
             </div>
@@ -280,66 +280,67 @@
              class="hidden lg:block absolute left-0 right-0 top-2 bg-white rounded-2xl border border-sand shadow-2xl z-50 p-8">
             <div class="grid grid-cols-4 gap-8">
                 <div>
-                    <h3 class="nav-label font-bold text-charcoal border-b border-sand pb-2 mb-4">Sepatu</h3>
+                    <h3 class="nav-label font-bold text-charcoal border-b border-sand pb-2 mb-4">Kategori Parfum Wanita</h3>
                     <ul class="space-y-3">
-                        <li><a href="{{ route('collections.show', 'women-everyday-sneakers') }}" class="text-body-sm text-iron hover:text-charcoal transition">Sneaker Sehari-hari</a></li>
-                        <li><a href="{{ route('collections.show', 'women-running-shoes') }}" class="text-body-sm text-iron hover:text-charcoal transition">Sepatu Lari</a></li>
-                        <li><a href="{{ route('collections.show', 'women-flats-loungers') }}" class="text-body-sm text-iron hover:text-charcoal transition">Flat & Santai</a></li>
-                        <li><a href="{{ route('collections.show', 'women-water-repellent-shoes') }}" class="text-body-sm text-iron hover:text-charcoal transition">Sepatu Tahan Air</a></li>
-                        <li><a href="{{ route('collections.show', 'women-slip-ons') }}" class="text-body-sm text-iron hover:text-charcoal transition">Slip-On</a></li>
+                        <li><a href="{{ route('collections.show', 'women-floral-rose') }}" class="text-body-sm text-iron hover:text-charcoal transition">Floral & Rose Petals</a></li>
+                        <li><a href="{{ route('collections.show', 'women-vanilla-gourmand') }}" class="text-body-sm text-iron hover:text-charcoal transition">Sweet Vanilla & Gourmand</a></li>
+                        <li><a href="{{ route('collections.show', 'women-fresh-citrus') }}" class="text-body-sm text-iron hover:text-charcoal transition">Fresh Citrus & White Floral</a></li>
+                        <li><a href="{{ route('collections.show', 'women-extrait-intense') }}" class="text-body-sm text-iron hover:text-charcoal transition">Extrait de Parfum Intense</a></li>
+                        <li><a href="{{ route('collections.show', 'women-amber-musk') }}" class="text-body-sm text-iron hover:text-charcoal transition">Warm Amber & Musk</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h3 class="nav-label font-bold text-charcoal border-b border-sand pb-2 mb-4">Pakaian & Aksesori</h3>
+                    <h3 class="nav-label font-bold text-charcoal border-b border-sand pb-2 mb-4">Set Hadiah & Hair Mist</h3>
                     <ul class="space-y-3">
-                        <li><a href="{{ route('collections.show', 'women-tees-tops') }}" class="text-body-sm text-iron hover:text-charcoal transition">Kaos & Atasan</a></li>
-                        <li><a href="{{ route('collections.show', 'women-socks') }}" class="text-body-sm text-iron hover:text-charcoal transition">Kaos Kaki Harian</a></li>
-                        <li><a href="{{ route('collections.show', 'women-bags-accessories') }}" class="text-body-sm text-iron hover:text-charcoal transition">Tas & Tote Bag</a></li>
+                        <li><a href="{{ route('collections.show', 'women-discovery-set') }}" class="text-body-sm text-iron hover:text-charcoal transition">Women's Discovery Set</a></li>
+                        <li><a href="{{ route('collections.show', 'women-hair-mist') }}" class="text-body-sm text-iron hover:text-charcoal transition">Hair Fragrance Mist</a></li>
+                        <li><a href="{{ route('collections.show', 'women-travel-set') }}" class="text-body-sm text-iron hover:text-charcoal transition">Rollerball & Travel Set</a></li>
+                        <li><a href="{{ route('collections.show', 'best-sellers') }}?gender=women" class="text-body-sm text-iron hover:text-charcoal transition">Parfum Wanita Terlaris</a></li>
                     </ul>
                 </div>
 
-                <!-- Mega Menu Category Swatch Card 1: Women Tree Lounger -->
-                <a href="{{ route('collections.show', 'women-flats-loungers') }}" 
+                <!-- Mega Menu Category Swatch Card 1: Rose Velvet -->
+                <a href="{{ route('products.show', 'womens-rose-velvet-damask-mist') }}" 
                    class="group relative rounded-[20px] bg-[#c4a4a4]/20 hover:bg-[#c4a4a4]/30 p-5 flex flex-col justify-between overflow-hidden min-h-[220px] border border-[#c4a4a4]/35 transition duration-300">
                     <div class="z-10">
                         <span class="inline-block bg-white text-charcoal rounded-full px-3 py-0.5 text-[10px] font-bold uppercase tracking-wider shadow-2xs">
-                            Tree Lounger
+                            Rose Velvet Mist
                         </span>
-                        <p class="text-[12px] text-charcoal/80 font-medium mt-1.5 leading-snug">Slip-on ringan dengan serat eukaliptus alami yang sejuk.</p>
+                        <p class="text-[12px] text-charcoal/80 font-medium mt-1.5 leading-snug">Kelopak mawar Damaskus & raspberry memikat.</p>
                     </div>
 
                     <!-- Product Image -->
                     <div class="my-auto py-1 flex items-center justify-center">
                         <img src="{{ asset('images/products/tree-lounger-pink.png') }}" 
-                             alt="Tree Lounger" 
+                             alt="Rose Velvet" 
                              class="h-24 w-auto object-contain drop-shadow-md group-hover:scale-110 transition-transform duration-300">
                     </div>
 
                     <span class="text-[11px] uppercase tracking-wider font-bold text-charcoal underline underline-offset-4 group-hover:opacity-80 transition inline-block">
-                        Beli Lounger Wanita →
+                        Lihat Rose Velvet →
                     </span>
                 </a>
 
-                <!-- Mega Menu Category Swatch Card 2: Women Tree Dasher -->
-                <a href="{{ route('collections.show', 'women-running-shoes') }}" 
+                <!-- Mega Menu Category Swatch Card 2: Vanilla Silk -->
+                <a href="{{ route('products.show', 'womens-vanilla-silk-warm-amber') }}" 
                    class="group relative rounded-[20px] bg-[#8a9a8c]/20 hover:bg-[#8a9a8c]/30 p-5 flex flex-col justify-between overflow-hidden min-h-[220px] border border-[#8a9a8c]/35 transition duration-300">
                     <div class="z-10">
                         <span class="inline-block bg-white text-charcoal rounded-full px-3 py-0.5 text-[10px] font-bold uppercase tracking-wider shadow-2xs">
-                            Tree Dasher 2
+                            Vanilla Silk & Amber
                         </span>
-                        <p class="text-[12px] text-charcoal/80 font-medium mt-1.5 leading-snug">Bantalan alami responsif untuk pergerakan aktif setiap hari.</p>
+                        <p class="text-[12px] text-charcoal/80 font-medium mt-1.5 leading-snug">Kehangatan vanila Madagaskar & amber lembut.</p>
                     </div>
 
                     <!-- Product Image -->
                     <div class="my-auto py-1 flex items-center justify-center">
-                        <img src="{{ asset('images/products/tree-dasher-sage.png') }}" 
-                             alt="Tree Dasher 2" 
+                        <img src="{{ asset('images/products/canvas-cruiser-white.png') }}" 
+                             alt="Vanilla Silk" 
                              class="h-24 w-auto object-contain drop-shadow-md group-hover:scale-110 transition-transform duration-300">
                     </div>
 
                     <span class="text-[11px] uppercase tracking-wider font-bold text-charcoal underline underline-offset-4 group-hover:opacity-80 transition inline-block">
-                        Beli Dasher Wanita →
+                        Lihat Vanilla Silk →
                     </span>
                 </a>
             </div>
@@ -362,15 +363,15 @@
                 <div>
                     <h3 class="nav-label font-bold text-charcoal border-b border-sand pb-2 mb-4">Diskon Berdasarkan Kategori</h3>
                     <ul class="space-y-3">
-                        <li><a href="{{ route('collections.show', 'men-sale') }}" class="text-body-sm text-iron hover:text-charcoal transition">Diskon Sepatu & Pakaian Pria</a></li>
-                        <li><a href="{{ route('collections.show', 'women-sale') }}" class="text-body-sm text-iron hover:text-charcoal transition">Diskon Sepatu & Pakaian Wanita</a></li>
+                        <li><a href="{{ route('collections.show', 'men-sale') }}" class="text-body-sm text-iron hover:text-charcoal transition">Diskon Parfum Pria</a></li>
+                        <li><a href="{{ route('collections.show', 'women-sale') }}" class="text-body-sm text-iron hover:text-charcoal transition">Diskon Parfum Wanita</a></li>
                         <li><a href="{{ route('collections.sale') }}" class="text-body-sm text-iron hover:text-charcoal transition">Semua Produk Diskon</a></li>
                     </ul>
                 </div>
                 <div class="col-span-2 rounded-card bg-sand/30 p-6 flex flex-col justify-center border border-sand">
                     <span class="text-caption font-bold uppercase tracking-wide10 text-charcoal">Penawaran Waktu Terbatas</span>
-                    <h4 class="font-display text-heading-sm font-normal text-charcoal mt-1">Koleksi Favorit Pilihan Diskon Spesial</h4>
-                    <p class="text-body-sm text-iron mt-2">Dapatkan diskon hingga 40% untuk pilihan warna musiman berbahan wol alami dan serat pohon.</p>
+                    <h4 class="font-display text-heading-sm font-normal text-charcoal mt-1">Koleksi Wewangian Spesial Diskon Musiman</h4>
+                    <p class="text-body-sm text-iron mt-2">Dapatkan diskon hingga 30% untuk botol pilihan dan paket bundling set wewangian alami.</p>
                     <div class="mt-4">
                         <a href="{{ route('collections.sale') }}" class="btn-pill-dark inline-block">
                             Belanja Semua Diskon
@@ -428,7 +429,7 @@
                     <svg class="w-4 h-4 text-stone flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                     </svg>
-                    <span class="text-charcoal/70">Cari produk fifa...</span>
+                    <span class="text-charcoal/70">Cari parfum FIFA...</span>
                 </button>
             </div>
 
@@ -456,93 +457,94 @@
 
             <!-- Mobile Tab Content: MEN -->
             <div x-show="mobileCategoryTab === 'men'" class="p-4 space-y-4">
-                <!-- Shoes Accordion -->
+                <!-- Perfume Accordion -->
                 <div class="border-b border-sand pb-3">
                     <button type="button" 
                             @click="mobileAccordion.menShoes = !mobileAccordion.menShoes" 
                             class="w-full flex items-center justify-between py-2 text-body-sm font-semibold text-charcoal min-h-[44px]">
-                        <span>Sepatu</span>
+                        <span>Koleksi Parfum Pria</span>
                         <svg class="w-4 h-4 transform transition-transform" :class="mobileAccordion.menShoes ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </button>
                     <div x-show="mobileAccordion.menShoes" x-collapse class="pl-4 space-y-2.5 pt-2">
-                        <a href="{{ route('collections.show', 'men-everyday-sneakers') }}" @click="mobileMenuOpen = false" class="block text-body-sm text-iron hover:text-charcoal py-1">Sneaker Sehari-hari</a>
-                        <a href="{{ route('collections.show', 'men-running-shoes') }}" @click="mobileMenuOpen = false" class="block text-body-sm text-iron hover:text-charcoal py-1">Sepatu Lari</a>
-                        <a href="{{ route('collections.show', 'men-slip-ons-loungers') }}" @click="mobileMenuOpen = false" class="block text-body-sm text-iron hover:text-charcoal py-1">Slip-On & Santai</a>
-                        <a href="{{ route('collections.show', 'men-water-repellent-shoes') }}" @click="mobileMenuOpen = false" class="block text-body-sm text-iron hover:text-charcoal py-1">Sepatu Tahan Air</a>
-                        <a href="{{ route('collections.show', 'men-hiking-trail-shoes') }}" @click="mobileMenuOpen = false" class="block text-body-sm text-iron hover:text-charcoal py-1">Sepatu Hiking & Trail</a>
+                        <a href="{{ route('collections.show', 'men-eau-de-parfum') }}" @click="mobileMenuOpen = false" class="block text-body-sm text-iron hover:text-charcoal py-1">Eau de Parfum (EDP)</a>
+                        <a href="{{ route('collections.show', 'men-extrait-de-parfum') }}" @click="mobileMenuOpen = false" class="block text-body-sm text-iron hover:text-charcoal py-1">Extrait de Parfum</a>
+                        <a href="{{ route('collections.show', 'men-woody-oud') }}" @click="mobileMenuOpen = false" class="block text-body-sm text-iron hover:text-charcoal py-1">Woody & Smoky Oud</a>
+                        <a href="{{ route('collections.show', 'men-fresh-aquatic') }}" @click="mobileMenuOpen = false" class="block text-body-sm text-iron hover:text-charcoal py-1">Fresh Aquatic & Citrus</a>
+                        <a href="{{ route('collections.show', 'men-spices-leather') }}" @click="mobileMenuOpen = false" class="block text-body-sm text-iron hover:text-charcoal py-1">Aromatic Spices & Leather</a>
                     </div>
                 </div>
 
-                <!-- Apparel Accordion -->
+                <!-- Sets Accordion -->
                 <div class="border-b border-sand pb-3">
                     <button type="button" 
                             @click="mobileAccordion.menApparel = !mobileAccordion.menApparel" 
                             class="w-full flex items-center justify-between py-2 text-body-sm font-semibold text-charcoal min-h-[44px]">
-                        <span>Pakaian & Kaos Kaki</span>
+                        <span>Discovery & Set Hadiah</span>
                         <svg class="w-4 h-4 transform transition-transform" :class="mobileAccordion.menApparel ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </button>
                     <div x-show="mobileAccordion.menApparel" x-collapse class="pl-4 space-y-2.5 pt-2">
-                        <a href="{{ route('collections.show', 'men-tees-tops') }}" @click="mobileMenuOpen = false" class="block text-body-sm text-iron hover:text-charcoal py-1">Kaos & Atasan</a>
-                        <a href="{{ route('collections.show', 'men-sweats-hoodies') }}" @click="mobileMenuOpen = false" class="block text-body-sm text-iron hover:text-charcoal py-1">Jaket & Hoodie</a>
-                        <a href="{{ route('collections.show', 'men-socks') }}" @click="mobileMenuOpen = false" class="block text-body-sm text-iron hover:text-charcoal py-1">Kaos Kaki Wol Merino</a>
+                        <a href="{{ route('collections.show', 'men-discovery-set') }}" @click="mobileMenuOpen = false" class="block text-body-sm text-iron hover:text-charcoal py-1">Discovery Set (5x10ml)</a>
+                        <a href="{{ route('collections.show', 'men-travel-spray') }}" @click="mobileMenuOpen = false" class="block text-body-sm text-iron hover:text-charcoal py-1">Travel Spray 10ml</a>
+                        <a href="{{ route('collections.show', 'men-body-mist') }}" @click="mobileMenuOpen = false" class="block text-body-sm text-iron hover:text-charcoal py-1">Scented Body Mist</a>
                     </div>
                 </div>
 
                 <a href="{{ route('categories.men') }}" @click="mobileMenuOpen = false" class="block py-2 text-body-sm font-bold text-charcoal underline underline-offset-4">
-                    Lihat Semua Produk Pria →
+                    Lihat Semua Parfum Pria →
                 </a>
             </div>
 
             <!-- Mobile Tab Content: WOMEN -->
             <div x-show="mobileCategoryTab === 'women'" class="p-4 space-y-4">
-                <!-- Shoes Accordion -->
+                <!-- Perfume Accordion -->
                 <div class="border-b border-sand pb-3">
                     <button type="button" 
                             @click="mobileAccordion.womenShoes = !mobileAccordion.womenShoes" 
                             class="w-full flex items-center justify-between py-2 text-body-sm font-semibold text-charcoal min-h-[44px]">
-                        <span>Sepatu</span>
+                        <span>Koleksi Parfum Wanita</span>
                         <svg class="w-4 h-4 transform transition-transform" :class="mobileAccordion.womenShoes ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </button>
                     <div x-show="mobileAccordion.womenShoes" x-collapse class="pl-4 space-y-2.5 pt-2">
-                        <a href="{{ route('collections.show', 'women-everyday-sneakers') }}" @click="mobileMenuOpen = false" class="block text-body-sm text-iron hover:text-charcoal py-1">Sneaker Sehari-hari</a>
-                        <a href="{{ route('collections.show', 'women-running-shoes') }}" @click="mobileMenuOpen = false" class="block text-body-sm text-iron hover:text-charcoal py-1">Sepatu Lari</a>
-                        <a href="{{ route('collections.show', 'women-flats-loungers') }}" @click="mobileMenuOpen = false" class="block text-body-sm text-iron hover:text-charcoal py-1">Flat & Santai</a>
-                        <a href="{{ route('collections.show', 'women-water-repellent-shoes') }}" @click="mobileMenuOpen = false" class="block text-body-sm text-iron hover:text-charcoal py-1">Sepatu Tahan Air</a>
-                        <a href="{{ route('collections.show', 'women-slip-ons') }}" @click="mobileMenuOpen = false" class="block text-body-sm text-iron hover:text-charcoal py-1">Slip-On</a>
+                        <a href="{{ route('collections.show', 'women-floral-rose') }}" @click="mobileMenuOpen = false" class="block text-body-sm text-iron hover:text-charcoal py-1">Floral & Rose Petals</a>
+                        <a href="{{ route('collections.show', 'women-vanilla-gourmand') }}" @click="mobileMenuOpen = false" class="block text-body-sm text-iron hover:text-charcoal py-1">Sweet Vanilla & Gourmand</a>
+                        <a href="{{ route('collections.show', 'women-fresh-citrus') }}" @click="mobileMenuOpen = false" class="block text-body-sm text-iron hover:text-charcoal py-1">Fresh Citrus & White Floral</a>
+                        <a href="{{ route('collections.show', 'women-extrait-intense') }}" @click="mobileMenuOpen = false" class="block text-body-sm text-iron hover:text-charcoal py-1">Extrait de Parfum Intense</a>
+                        <a href="{{ route('collections.show', 'women-amber-musk') }}" @click="mobileMenuOpen = false" class="block text-body-sm text-iron hover:text-charcoal py-1">Warm Amber & Musk</a>
                     </div>
                 </div>
 
-                <!-- Apparel Accordion -->
+                <!-- Sets Accordion -->
                 <div class="border-b border-sand pb-3">
                     <button type="button" 
                             @click="mobileAccordion.womenApparel = !mobileAccordion.womenApparel" 
                             class="w-full flex items-center justify-between py-2 text-body-sm font-semibold text-charcoal min-h-[44px]">
-                        <span>Pakaian & Aksesori</span>
+                        <span>Set Hadiah & Hair Mist</span>
                         <svg class="w-4 h-4 transform transition-transform" :class="mobileAccordion.womenApparel ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </button>
                     <div x-show="mobileAccordion.womenApparel" x-collapse class="pl-4 space-y-2.5 pt-2">
-                        <a href="{{ route('collections.show', 'women-tees-tops') }}" @click="mobileMenuOpen = false" class="block text-body-sm text-iron hover:text-charcoal py-1">Kaos & Atasan</a>
-                        <a href="{{ route('collections.show', 'women-socks') }}" @click="mobileMenuOpen = false" class="block text-body-sm text-iron hover:text-charcoal py-1">Kaos Kaki Harian</a>
+                        <a href="{{ route('collections.show', 'women-discovery-set') }}" @click="mobileMenuOpen = false" class="block text-body-sm text-iron hover:text-charcoal py-1">Discovery Set (5x10ml)</a>
+                        <a href="{{ route('collections.show', 'women-hair-mist') }}" @click="mobileMenuOpen = false" class="block text-body-sm text-iron hover:text-charcoal py-1">Hair Fragrance Mist</a>
+                        <a href="{{ route('collections.show', 'women-travel-set') }}" @click="mobileMenuOpen = false" class="block text-body-sm text-iron hover:text-charcoal py-1">Rollerball & Travel Set</a>
                     </div>
                 </div>
 
                 <a href="{{ route('categories.women') }}" @click="mobileMenuOpen = false" class="block py-2 text-body-sm font-bold text-charcoal underline underline-offset-4">
-                    Lihat Semua Produk Wanita →
+                    Lihat Semua Parfum Wanita →
                 </a>
             </div>
 
             <!-- Mobile Tab Content: SALE -->
             <div x-show="mobileCategoryTab === 'sale'" class="p-4 space-y-3">
-                <a href="{{ route('collections.show', 'men-sale') }}" @click="mobileMenuOpen = false" class="block py-2.5 text-body-sm text-charcoal font-medium border-b border-sand">Diskon Pria</a>
-                <a href="{{ route('collections.show', 'women-sale') }}" @click="mobileMenuOpen = false" class="block py-2.5 text-body-sm text-charcoal font-medium border-b border-sand">Diskon Wanita</a>
+                <a href="{{ route('collections.show', 'men-sale') }}" @click="mobileMenuOpen = false" class="block py-2.5 text-body-sm text-charcoal font-medium border-b border-sand">Diskon Parfum Pria</a>
+                <a href="{{ route('collections.show', 'women-sale') }}" @click="mobileMenuOpen = false" class="block py-2.5 text-body-sm text-charcoal font-medium border-b border-sand">Diskon Parfum Wanita</a>
                 <a href="{{ route('collections.sale') }}" @click="mobileMenuOpen = false" class="block py-2.5 text-body-sm font-bold text-charcoal">Semua Diskon →</a>
             </div>
         </div>
@@ -617,7 +619,7 @@
                            x-ref="searchInput"
                            x-model="searchQuery" 
                            @input.debounce.250ms="doLiveSearch()"
-                           placeholder="Cari produk fifa (contoh: Tree Runner, Wool, Dasher)..." 
+                           placeholder="Cari parfum FIFA (contoh: Aurora Blue, Obsidian Oud, Rose Velvet, Vanilla)..." 
                            class="w-full text-base sm:text-lg bg-transparent text-charcoal placeholder:text-stone/70 border-none outline-none focus:ring-0">
                     
                     <!-- Clear query button -->
@@ -653,7 +655,7 @@
                         Pencarian Populer
                     </div>
                     <div class="flex flex-wrap gap-2">
-                        @foreach(['Tree Runner', 'Wool Runner', 'Tree Dasher', 'Tree Lounger', 'Mizzle', 'Pria', 'Wanita', 'Kaos Kaki', 'Tas Tote'] as $tag)
+                        @foreach(['Aurora Blue', 'Obsidian Oud', 'Rose Velvet', 'Vanilla Silk', 'Sage Vetiver', 'Citrus Breeze', 'Discovery Set', 'Extrait'] as $tag)
                             <button type="button" 
                                     @click="selectTag('{{ $tag }}')"
                                     class="px-3.5 py-1.5 rounded-full bg-sand/30 hover:bg-sand text-charcoal text-body-sm font-medium transition cursor-pointer border border-sand/70">
@@ -669,14 +671,14 @@
                         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
                     </svg>
-                    <span class="text-caption">Mencari produk...</span>
+                    <span class="text-caption">Mencari aroma...</span>
                 </div>
 
                 <!-- Live Results -->
                 <div x-show="!searchLoading && searchQuery.length >= 2 && searchResults.length > 0">
                     <div class="flex items-center justify-between mb-3 border-b border-sand pb-2">
                         <span class="text-[11px] font-bold uppercase tracking-widest text-stone">
-                            Hasil Produk (<span x-text="searchResults.length"></span>)
+                            Hasil Parfum (<span x-text="searchResults.length"></span>)
                         </span>
                         <a :href="'{{ route('search.index') }}?q=' + encodeURIComponent(searchQuery)" 
                            class="text-[12px] font-bold text-charcoal hover:underline">
@@ -687,8 +689,8 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <template x-for="item in searchResults" :key="item.id">
                             <a :href="item.url" 
-                               @click="searchOpen = false"
-                               class="group flex items-center gap-3.5 p-3 rounded-xl hover:bg-sand/25 border border-sand/50 transition">
+                                @click="searchOpen = false" 
+                                class="group flex items-center gap-3.5 p-3 rounded-xl hover:bg-sand/25 border border-sand/50 transition">
                                 <div class="w-16 h-16 bg-[#f5f4f0] rounded-lg flex items-center justify-center flex-shrink-0 p-1 overflow-hidden">
                                     <img :src="item.image" :alt="item.name" class="w-full h-full object-contain group-hover:scale-110 transition duration-300">
                                 </div>
@@ -717,8 +719,8 @@
                 <!-- Empty State -->
                 <div x-show="!searchLoading && searchQuery.length >= 2 && searchResults.length === 0" 
                      class="py-8 text-center text-stone">
-                    <p class="text-body-sm text-charcoal font-medium">Tidak ada produk yang cocok dengan "<span x-text="searchQuery"></span>".</p>
-                    <p class="text-caption text-iron mt-1">Coba gunakan kata kunci lain seperti <em>Tree Runner</em>, <em>Wool</em>, atau <em>Dasher</em>.</p>
+                    <p class="text-body-sm text-charcoal font-medium">Tidak ada parfum yang cocok dengan "<span x-text="searchQuery"></span>".</p>
+                    <p class="text-caption text-iron mt-1">Coba gunakan kata kunci lain seperti <em>Aurora Blue</em>, <em>Oud</em>, atau <em>Vanilla</em>.</p>
                 </div>
 
             </div>
@@ -726,5 +728,7 @@
         </div>
 
     </div>
+
+</header> </div>
 
 </header>

@@ -17,233 +17,77 @@ class ProductSeeder extends Seeder
     public function run(): void
     {
         // 1. Fetch Categories
-        $menSneakers = Category::where('slug', 'men-everyday-sneakers')->first();
-        $menRunning = Category::where('slug', 'men-running-shoes')->first();
-        $menLoungers = Category::where('slug', 'men-slip-ons-loungers')->first();
-        $menMizzles = Category::where('slug', 'men-water-repellent-shoes')->first();
-        $menHiking = Category::where('slug', 'men-hiking-trail-shoes')->first();
-        $menTees = Category::where('slug', 'men-tees-tops')->first();
-        $menHoodies = Category::where('slug', 'men-sweats-hoodies')->first();
-        $menSocks = Category::where('slug', 'men-socks')->first();
-        $bags = Category::where('slug', 'bags-accessories')->first();
+        $menEdp = Category::where('slug', 'men-eau-de-parfum')->first() ?? Category::first();
+        $menExtrait = Category::where('slug', 'men-extrait-de-parfum')->first() ?? $menEdp;
+        $menOud = Category::where('slug', 'men-woody-oud')->first() ?? $menEdp;
+        $menAquatic = Category::where('slug', 'men-fresh-aquatic')->first() ?? $menEdp;
+        $menLeather = Category::where('slug', 'men-spices-leather')->first() ?? $menEdp;
+        $menSet = Category::where('slug', 'men-discovery-set')->first() ?? $menEdp;
 
-        $womenSneakers = Category::where('slug', 'women-everyday-sneakers')->first();
-        $womenRunning = Category::where('slug', 'women-running-shoes')->first();
-        $womenFlats = Category::where('slug', 'women-flats-loungers')->first();
-        $womenSlipOns = Category::where('slug', 'women-slip-ons')->first();
-        $womenMizzles = Category::where('slug', 'women-water-repellent-shoes')->first();
-        $womenTees = Category::where('slug', 'women-tees-tops')->first();
-        $womenSocks = Category::where('slug', 'women-socks')->first();
+        $womenFloral = Category::where('slug', 'women-floral-rose')->first() ?? Category::first();
+        $womenGourmand = Category::where('slug', 'women-vanilla-gourmand')->first() ?? $womenFloral;
+        $womenCitrus = Category::where('slug', 'women-fresh-citrus')->first() ?? $womenFloral;
+        $womenExtrait = Category::where('slug', 'women-extrait-intense')->first() ?? $womenFloral;
+        $womenAmber = Category::where('slug', 'women-amber-musk')->first() ?? $womenFloral;
+        $womenSet = Category::where('slug', 'women-discovery-set')->first() ?? $womenFloral;
 
         // 2. Fetch Collections
         $newArrivalsCol = Collection::where('slug', 'new-arrivals')->first();
         $bestSellersCol = Collection::where('slug', 'best-sellers')->first();
         $saleCol = Collection::where('slug', 'sale')->first();
-        $treeCol = Collection::where('slug', 'tree-runners')->first();
-        $woolCol = Collection::where('slug', 'wool-runners')->first();
+        $botanicalCol = Collection::where('slug', 'tree-runners')->first();
+        $extraitCol = Collection::where('slug', 'wool-runners')->first();
 
         // 3. Products Master Dataset
         $productsData = [
             // ----------------------------------------------------
-            // MEN SHOES
+            // MEN FRAGRANCES
             // ----------------------------------------------------
             [
-                'category_id' => $menSneakers?->id ?? 1,
-                'name' => "Sepatu Pria Tree Runner Go",
-                'slug' => 'mens-tree-runner-go',
-                'short_description' => 'Sepatu harian ringan dan sejuk berbahan serat pohon eucalyptus bersertifikasi FSC®.',
-                'description' => '<p>Dirancang untuk jalan santai harian, bepergian, dan aktivitas non-stop. Sepatu Pria Tree Runner Go dilengkapi upper serat pohon eucalyptus yang bernapas, midsole SweetFoam® dari tebu alami yang empuk, serta insole berbahan minyak biji jarak yang super lembut.</p><p>Sangat fleksibel, dapat dicuci dengan mesin cuci, dan dibuat dari 100% material alami terbarukan untuk kenyamanan optimal sepanjang hari.</p>',
-                'material_info' => 'Upper: Serat TENCEL™ Lyocell bersertifikasi FSC (pohon eucalyptus). Midsole: SweetFoam® berbahan tebu alami Brasil. Insole: Campuran minyak biji jarak dengan lapisan wol merino ZQ.',
-                'sustainability_note' => 'Jejak karbon: 4.87 kg CO2e. 100% netral karbon melalui inisiatif iklim terverifikasi.',
-                'base_price' => 1750000,
-                'compare_at_price' => 1950000,
+                'category_id' => $menAquatic->id,
+                'name' => "Parfum Pria Aurora Blue Marine EDP",
+                'slug' => 'mens-aurora-blue-marine-edp',
+                'short_description' => 'Aroma laut segar yang membangkitkan energi dengan perpaduan Bergamot Calabria, garam laut, dan kayu cedar alami.',
+                'description' => '<p>Diciptakan untuk pria dinamis dan modern. Aurora Blue Marine EDP menghadirkan kesegaran hembusan angin samudra yang memikat. Dibuka dengan kesegaran citrus Calabria berpadu lembut dengan nuansa mineral garam laut, lalu beralih ke kehangatan kayu cedar dan lumut pohon oak alami.</p><p>Dibuat dari 100% konsentrat minyak wangi alami terbarukan dengan ketahanan wangi hingga 10-12 jam di iklim tropis.</p>',
+                'material_info' => 'Top Notes: Bergamot Calabria, Grapefruit, Sea Salt. Heart Notes: Marine Accord, Geranium, Rosemary. Base Notes: Virginian Cedarwood, Ambergris, Oakmoss.',
+                'sustainability_note' => 'Ekstrak minyak atsiri 100% dari perkebunan organik terverifikasi. Botol kaca daur ulang dengan tutup perak premium.',
+                'base_price' => 850000,
+                'compare_at_price' => 950000,
                 'is_active' => true,
                 'is_featured' => true,
-                'weight_grams' => 600,
-                'collections' => array_filter([$newArrivalsCol?->id, $bestSellersCol?->id, $treeCol?->id]),
+                'weight_grams' => 350,
+                'collections' => array_filter([$newArrivalsCol?->id, $bestSellersCol?->id, $botanicalCol?->id]),
                 'variants' => [
                     [
-                        'color_name' => 'Mist Blue (Blizzard Sole)',
+                        'color_name' => 'Signature Blue Crystal',
                         'color_hex' => '#5c778a',
-                        'sizes' => ['39' => 8, '40' => 15, '41' => 12, '42' => 20, '43' => 6, '44' => 4],
-                    ],
-                    [
-                        'color_name' => 'Natural White (Blizzard Sole)',
-                        'color_hex' => '#ffffff',
-                        'sizes' => ['39' => 5, '40' => 10, '41' => 14, '42' => 18, '43' => 8, '44' => 3],
-                    ],
-                    [
-                        'color_name' => 'Forest Green',
-                        'color_hex' => '#4e6e58',
-                        'sizes' => ['40' => 6, '41' => 8, '42' => 12, '43' => 4],
+                        'sizes' => ['50ml' => 25, '100ml' => 15, '30ml' => 30],
                     ],
                 ],
                 'images' => [
                     ['url' => '/images/products/tree-runner-blue.png', 'order' => 1, 'is_primary' => true],
                     ['url' => '/images/products/tree-runner-white.png', 'order' => 2, 'is_primary' => false],
-                    ['url' => '/images/products/tree-runner-forest.png', 'order' => 3, 'is_primary' => false],
                 ],
             ],
             [
-                'category_id' => $menRunning?->id ?? 1,
-                'name' => "Sepatu Lari Pria Tree Dasher 2",
-                'slug' => 'mens-tree-dasher-2',
-                'short_description' => 'Sepatu lari performa aktif dengan bantalan alami responsif dan daya cengkeram optimal.',
-                'description' => '<p>Tree Dasher 2 adalah sepatu lari dan latihan harian kami yang terbuat dari bahan alami. Dilengkapi kerah tumit yang diperbarui untuk penopang ekstra, bantalan sol karet alam anti-selip, serta SweetFoam® dengan pengembalian energi tinggi.</p>',
-                'material_info' => 'Upper satu rajutan tanpa sambungan dari serat eucalyptus bersertifikasi FSC. Midsole SweetFoam® dari tebu alami. Bantalan outsole karet alam bersertifikasi FSC.',
-                'sustainability_note' => 'Jejak karbon: 7.21 kg CO2e. Sepenuhnya netral karbon melalui program iklim tersertifikasi.',
-                'base_price' => 2150000,
+                'category_id' => $menOud->id,
+                'name' => "Parfum Pria Obsidian Noir Oud Extrait",
+                'slug' => 'mens-obsidian-noir-oud-extrait',
+                'short_description' => 'Mahakarya aroma kayu gaharu Kalimantan, lada hitam, dan kulit mewah dengan konsentrasi Extrait de Parfum 35%.',
+                'description' => '<p>Obsidian Noir Oud adalah simbol kemewahan dan wibawa maskulin. Memadukan kekayaan kayu gaharu (agarwood) Nusantara murni, resin kemenyan, dan kapulaga eksotis. Memberikan impresi karismatik, hangat, dan tahan lama hingga lebih dari 16 jam.</p>',
+                'material_info' => 'Top Notes: Black Pepper, Wild Cardamom, Saffron. Heart Notes: Royal Agarwood (Oud), Birch Smoke, Rose Damask. Base Notes: Indonesian Patchouli, Black Leather, Rich Amber.',
+                'sustainability_note' => 'Gaharu bersertifikasi CITES lestari. 100% bebas phthalates dan paraben.',
+                'base_price' => 1250000,
                 'compare_at_price' => null,
                 'is_active' => true,
                 'is_featured' => true,
-                'weight_grams' => 700,
-                'collections' => array_filter([$newArrivalsCol?->id, $bestSellersCol?->id]),
+                'weight_grams' => 400,
+                'collections' => array_filter([$bestSellersCol?->id, $extraitCol?->id]),
                 'variants' => [
                     [
-                        'color_name' => 'Sage Haze',
-                        'color_hex' => '#7d8d7e',
-                        'sizes' => ['39' => 6, '40' => 14, '41' => 10, '42' => 16, '43' => 8, '44' => 5],
-                    ],
-                    [
-                        'color_name' => 'Thunder Navy',
-                        'color_hex' => '#2b3a4a',
-                        'sizes' => ['40' => 8, '41' => 12, '42' => 15, '43' => 7, '44' => 2],
-                    ],
-                    [
-                        'color_name' => 'Mineral Crimson',
-                        'color_hex' => '#9e4747',
-                        'sizes' => ['40' => 4, '41' => 6, '42' => 9, '43' => 3],
-                    ],
-                ],
-                'images' => [
-                    ['url' => '/images/products/tree-dasher-sage.png', 'order' => 1, 'is_primary' => true],
-                    ['url' => '/images/products/tree-dasher-navy.png', 'order' => 2, 'is_primary' => false],
-                    ['url' => '/images/products/tree-dasher-red.png', 'order' => 3, 'is_primary' => false],
-                ],
-            ],
-            [
-                'category_id' => $menSneakers?->id ?? 1,
-                'name' => "Sepatu Pria Wool Runner 2",
-                'slug' => 'mens-wool-runner-2',
-                'short_description' => 'Ikon klasik terlahir kembali: lebih lembut, membal, dan dibuat dari wol merino ZQ alami.',
-                'description' => '<p>Sneaker wol revolusioner yang mengawali segalanya, kini disempurnakan dengan lebih dari 15 peningkatan. Upper wol merino yang nyaman mengatur suhu kaki secara alami dan tahan bau tanpa zat kimia sintetis.</p>',
-                'material_info' => 'Upper wol merino Selandia Baru bersertifikasi ZQ. Sol SweetFoam® berbasis tebu. Tali sepatu dari poliester botol daur ulang.',
-                'sustainability_note' => 'Jejak karbon: 5.42 kg CO2e. 100% material alami terbarukan.',
-                'base_price' => 1850000,
-                'compare_at_price' => 2100000,
-                'is_active' => true,
-                'is_featured' => true,
-                'weight_grams' => 650,
-                'collections' => array_filter([$bestSellersCol?->id, $woolCol?->id, $saleCol?->id]),
-                'variants' => [
-                    [
-                        'color_name' => 'Natural Grey (Cream Sole)',
-                        'color_hex' => '#888582',
-                        'sizes' => ['39' => 4, '40' => 12, '41' => 18, '42' => 22, '43' => 10, '44' => 6],
-                    ],
-                    [
-                        'color_name' => 'Natural Black (Dark Sole)',
-                        'color_hex' => '#222222',
-                        'sizes' => ['39' => 7, '40' => 15, '41' => 20, '42' => 25, '43' => 12, '44' => 8],
-                    ],
-                ],
-                'images' => [
-                    ['url' => '/images/products/wool-runner-grey.png', 'order' => 1, 'is_primary' => true],
-                    ['url' => '/images/products/wool-runner-black.png', 'order' => 2, 'is_primary' => false],
-                ],
-            ],
-            [
-                'category_id' => $menLoungers?->id ?? 1,
-                'name' => "Sepatu Pria Canvas Cruiser Slip On",
-                'slug' => 'mens-canvas-cruiser-slip-on',
-                'short_description' => 'Slip-on klasik yang mudah dipakai dari kanvas katun organik kuat dan tahan lama.',
-                'description' => '<p>Sepatu slip-on harian yang sangat fleksibel. Mudah dilepas dan dipakai, dilengkapi bantalan penyangga lengkung kaki serta kanvas sejuk yang semakin lembut setiap kali dipakai.</p>',
-                'material_info' => 'Upper 100% kanvas katun organik, sol luar karet alam, insole EVA daur ulang.',
-                'sustainability_note' => 'Jejak karbon: 4.10 kg CO2e.',
-                'base_price' => 1450000,
-                'compare_at_price' => null,
-                'is_active' => true,
-                'is_featured' => true,
-                'weight_grams' => 580,
-                'collections' => array_filter([$bestSellersCol?->id, $newArrivalsCol?->id]),
-                'variants' => [
-                    [
-                        'color_name' => 'Warm White',
-                        'color_hex' => '#ded7cd',
-                        'sizes' => ['39' => 5, '40' => 10, '41' => 15, '42' => 14, '43' => 8, '44' => 4],
-                    ],
-                    [
-                        'color_name' => 'Blizzard White',
-                        'color_hex' => '#ffffff',
-                        'sizes' => ['39' => 6, '40' => 11, '41' => 16, '42' => 19, '43' => 7, '44' => 3],
-                    ],
-                ],
-                'images' => [
-                    ['url' => '/images/products/canvas-cruiser-white.png', 'order' => 1, 'is_primary' => true],
-                    ['url' => '/images/products/cruiser-slipon-blizzard.png', 'order' => 2, 'is_primary' => false],
-                ],
-            ],
-            [
-                'category_id' => $menLoungers?->id ?? 1,
-                'name' => "Sepatu Pria Runner NZ Slip On",
-                'slug' => 'mens-runner-nz-slip-on',
-                'short_description' => 'Sneaker slip-on rajut bertekstur memadukan kenyamanan kaus kaki dengan bantalan harian.',
-                'description' => '<p>Langsung pakai dan melangkah. Runner NZ Slip On membalut kaki Anda dengan kerah rajut elastis yang pas dan sol tebu alami SweetFoam® untuk kenyamanan jalan tanpa tekanan.</p>',
-                'material_info' => 'Upper rajut ribbed berteknologi tinggi dari serat eucalyptus dan nilon daur ulang.',
-                'sustainability_note' => 'Jejak karbon: 4.60 kg CO2e.',
-                'base_price' => 1650000,
-                'compare_at_price' => 1850000,
-                'is_active' => true,
-                'is_featured' => true,
-                'weight_grams' => 600,
-                'collections' => array_filter([$bestSellersCol?->id, $newArrivalsCol?->id]),
-                'variants' => [
-                    [
-                        'color_name' => 'Mushroom Taupe',
-                        'color_hex' => '#b2a496',
-                        'sizes' => ['39' => 4, '40' => 9, '41' => 12, '42' => 16, '43' => 6, '44' => 2],
-                    ],
-                    [
-                        'color_name' => 'Anthracite Charcoal',
-                        'color_hex' => '#444240',
-                        'sizes' => ['39' => 7, '40' => 14, '41' => 18, '42' => 20, '43' => 9, '44' => 5],
-                    ],
-                    [
-                        'color_name' => 'Oatmeal Natural',
-                        'color_hex' => '#ded4c5',
-                        'sizes' => ['40' => 5, '41' => 8, '42' => 11, '43' => 4],
-                    ],
-                ],
-                'images' => [
-                    ['url' => '/images/products/runner-nz-mushroom.png', 'order' => 1, 'is_primary' => true],
-                    ['url' => '/images/products/runner-nz-anthracite.png', 'order' => 2, 'is_primary' => false],
-                    ['url' => '/images/products/runner-nz-oat.png', 'order' => 3, 'is_primary' => false],
-                ],
-            ],
-            [
-                'category_id' => $menMizzles?->id ?? 1,
-                'name' => "Sepatu Pria Wool Runner-up Mizzle",
-                'slug' => 'mens-wool-runner-up-mizzle',
-                'short_description' => 'Sneaker high-top tahan percikan air dari bahan wol merino ZQ pelindung genangan.',
-                'description' => '<p>Jaga kaki tetap kering dan hangat dalam kondisi cuaca apapun. Dilengkapi teknologi bio-based Puddle Guard® penangkal air dan sol tapak karet alam anti-selip di segala medan.</p>',
-                'material_info' => 'Upper wol merino ZQ dengan perlakuan ECO Puddle Guard®. Outsole karet alam bergerigi untuk segala cuaca.',
-                'sustainability_note' => 'Jejak karbon: 6.80 kg CO2e.',
-                'base_price' => 2350000,
-                'compare_at_price' => null,
-                'is_active' => true,
-                'is_featured' => false,
-                'weight_grams' => 750,
-                'collections' => array_filter([$woolCol?->id]),
-                'variants' => [
-                    [
-                        'color_name' => 'True Black (Black Sole)',
-                        'color_hex' => '#1f1f1f',
-                        'sizes' => ['40' => 8, '41' => 14, '42' => 16, '43' => 7, '44' => 3],
-                    ],
-                    [
-                        'color_name' => 'Dappled Grey',
-                        'color_hex' => '#6b6967',
-                        'sizes' => ['40' => 5, '41' => 9, '42' => 12, '43' => 6],
+                        'color_name' => 'Obsidian Black Edition',
+                        'color_hex' => '#1a1a1a',
+                        'sizes' => ['50ml' => 20, '100ml' => 12, '30ml' => 18],
                     ],
                 ],
                 'images' => [
@@ -251,34 +95,106 @@ class ProductSeeder extends Seeder
                     ['url' => '/images/products/wool-runner-grey.png', 'order' => 2, 'is_primary' => false],
                 ],
             ],
-
-            // ----------------------------------------------------
-            // WOMEN SHOES
-            // ----------------------------------------------------
             [
-                'category_id' => $womenFlats?->id ?? 1,
-                'name' => "Sepatu Wanita Tree Lounger",
-                'slug' => 'womens-tree-lounger',
-                'short_description' => 'Sepatu slip-on serat eucalyptus yang sejuk, praktis tanpa kaus kaki, dan empuk.',
-                'description' => '<p>Sepatu flat slip-on kasual terbaik untuk bepergian dan santai akhir pekan. Serat pohon eucalyptus yang selembut sutra menjaga kaki tetap sejuk dan segar sepanjang hari.</p>',
-                'material_info' => 'Upper serat eucalyptus bersertifikasi FSC, sol tebu SweetFoam®, insole berlapisan wol merino lembut.',
-                'sustainability_note' => 'Jejak karbon: 3.90 kg CO2e.',
-                'base_price' => 1550000,
-                'compare_at_price' => 1750000,
+                'category_id' => $menExtrait->id,
+                'name' => "Parfum Pria Sage & Vetiver Elixir",
+                'slug' => 'mens-sage-vetiver-elixir',
+                'short_description' => 'Kesegaran herbal berkarakter perpaduan daun clary sage Prancis, vetiver Haiti, dan lavender pegunungan.',
+                'description' => '<p>Wewangian aromatik hijau yang menenangkan sekaligus menyegarkan pikiran. Dirancang untuk pertemuan bisnis, suasana kantor ber-AC, maupun acara santai berkelas.</p>',
+                'material_info' => 'Top Notes: French Clary Sage, Green Apple, Bergamot. Heart Notes: Mountain Lavender, Nutmeg, Geranium. Base Notes: Haitian Vetiver, White Musk, Tonka Bean.',
+                'sustainability_note' => 'Minyak vetiver dan sage hasil panen petani lokal berkelanjutan.',
+                'base_price' => 890000,
+                'compare_at_price' => 990000,
                 'is_active' => true,
                 'is_featured' => true,
-                'weight_grams' => 450,
-                'collections' => array_filter([$bestSellersCol?->id, $newArrivalsCol?->id, $treeCol?->id]),
+                'weight_grams' => 350,
+                'collections' => array_filter([$newArrivalsCol?->id, $bestSellersCol?->id, $botanicalCol?->id]),
                 'variants' => [
                     [
-                        'color_name' => 'Dusty Mauve',
-                        'color_hex' => '#9d7370',
-                        'sizes' => ['36' => 6, '37' => 14, '38' => 18, '39' => 20, '40' => 12, '41' => 4],
+                        'color_name' => 'Sage Frost Edition',
+                        'color_hex' => '#7d8d7e',
+                        'sizes' => ['50ml' => 22, '100ml' => 14, '30ml' => 20],
                     ],
+                ],
+                'images' => [
+                    ['url' => '/images/products/tree-dasher-sage.png', 'order' => 1, 'is_primary' => true],
+                    ['url' => '/images/products/tree-dasher-navy.png', 'order' => 2, 'is_primary' => false],
+                ],
+            ],
+            [
+                'category_id' => $menLeather->id,
+                'name' => "Parfum Pria Smoky Tobacco & Sandalwood",
+                'slug' => 'mens-smoky-tobacco-sandalwood',
+                'short_description' => 'Aroma tembakau madu manis, kayu cendana Kupang, dan rempah cengkeh hangat yang menggoda.',
+                'description' => '<p>Kehangatan malam dalam satu semprotan. Kombinasi daun tembakau berkualitas tinggi dengan manisnya vanila madu dan kedalaman kayu cendana murni memberikan aroma sensual dan elegan.</p>',
+                'material_info' => 'Top Notes: Sweet Tobacco Leaf, Spiced Ginger, Clove. Heart Notes: Cacao Pod, Tonka Bean, Vanilla Blossom. Base Notes: Timor Sandalwood, Dry Fruit Accord, Sweet Wood Sap.',
+                'sustainability_note' => 'Cendana legal bersertifikat hutan lestari Nusa Tenggara.',
+                'base_price' => 1100000,
+                'compare_at_price' => 1250000,
+                'is_active' => true,
+                'is_featured' => true,
+                'weight_grams' => 380,
+                'collections' => array_filter([$bestSellersCol?->id, $extraitCol?->id]),
+                'variants' => [
                     [
-                        'color_name' => 'Warm Terracotta',
-                        'color_hex' => '#b87358',
-                        'sizes' => ['36' => 4, '37' => 10, '38' => 15, '39' => 16, '40' => 8, '41' => 2],
+                        'color_name' => 'Smoky Charcoal Glass',
+                        'color_hex' => '#444240',
+                        'sizes' => ['50ml' => 18, '100ml' => 10, '30ml' => 15],
+                    ],
+                ],
+                'images' => [
+                    ['url' => '/images/products/runner-nz-anthracite.png', 'order' => 1, 'is_primary' => true],
+                    ['url' => '/images/products/runner-nz-mushroom.png', 'order' => 2, 'is_primary' => false],
+                ],
+            ],
+            [
+                'category_id' => $menEdp->id,
+                'name' => "Parfum Pria Citrus Breeze & Neroli EDP",
+                'slug' => 'mens-citrus-breeze-neroli-edp',
+                'short_description' => 'Kesegaran jeruk Sisilia, bunga neroli putih, dan amberwood yang cerah dan memikat.',
+                'description' => '<p>Parfum musim panas terbaik untuk aktivitas luar ruangan maupun liburan pantai. Memberikan sensasi bersih, bersemangat, dan wangi yang sangat disukai orang sekitar.</p>',
+                'material_info' => 'Top Notes: Sicilian Lemon, Mandarin Orange, Bergamot. Heart Notes: Neroli, Orange Blossom, Jasmine Sambac. Base Notes: Amberwood, White Musk, Angelica Root.',
+                'sustainability_note' => 'Bahan botani murni tanpa pewarna sintetis berbahaya.',
+                'base_price' => 780000,
+                'compare_at_price' => null,
+                'is_active' => true,
+                'is_featured' => false,
+                'weight_grams' => 320,
+                'collections' => array_filter([$botanicalCol?->id, $saleCol?->id]),
+                'variants' => [
+                    [
+                        'color_name' => 'Sunlight Gold',
+                        'color_hex' => '#ded4c5',
+                        'sizes' => ['50ml' => 20, '100ml' => 15, '30ml' => 25],
+                    ],
+                ],
+                'images' => [
+                    ['url' => '/images/products/cruiser-slipon-blizzard.png', 'order' => 1, 'is_primary' => true],
+                ],
+            ],
+
+            // ----------------------------------------------------
+            // WOMEN FRAGRANCES
+            // ----------------------------------------------------
+            [
+                'category_id' => $womenFloral->id,
+                'name' => "Parfum Wanita Rose Velvet & Damask Mist",
+                'slug' => 'womens-rose-velvet-damask-mist',
+                'short_description' => 'Kemewahan kelopak mawar Damaskus, raspberry manis, dan sentuhan musk sutra yang memikat.',
+                'description' => '<p>Parfum wanita terlaris FIFA. Memancarkan aura feminin yang anggun, romantis, dan percaya diri. Setiap tetesnya mengekstrak ribuan kelopak mawar segar yang dipanen di waktu fajar.</p>',
+                'material_info' => 'Top Notes: Damask Rose Petals, Pink Pepper, Wild Raspberry. Heart Notes: Peony, Turkish Rose Absolute, White Peach. Base Notes: Cashmere Wood, Silky White Musk, Amber.',
+                'sustainability_note' => 'Kelopak mawar alami dari perkebunan bunga bebas pestisida.',
+                'base_price' => 920000,
+                'compare_at_price' => 1050000,
+                'is_active' => true,
+                'is_featured' => true,
+                'weight_grams' => 350,
+                'collections' => array_filter([$bestSellersCol?->id, $newArrivalsCol?->id, $botanicalCol?->id]),
+                'variants' => [
+                    [
+                        'color_name' => 'Rose Petal Blush',
+                        'color_hex' => '#9d7370',
+                        'sizes' => ['50ml' => 30, '100ml' => 18, '30ml' => 35],
                     ],
                 ],
                 'images' => [
@@ -287,86 +203,24 @@ class ProductSeeder extends Seeder
                 ],
             ],
             [
-                'category_id' => $womenRunning?->id ?? 1,
-                'name' => "Sepatu Lari Wanita Tree Dasher 2",
-                'slug' => 'womens-tree-dasher-2',
-                'short_description' => 'Sepatu lari performa tinggi dirancang dengan serat alami bernapas yang sejuk.',
-                'description' => '<p>Dibuat untuk lari pagi, olahraga 5K, dan rutinitas aktif di perkotaan. Dilengkapi upper anatomis tanpa jahitan, bantalan tumit empuk, dan midsole SweetFoam® alami untuk daya pantul maksimal.</p>',
-                'material_info' => 'Upper rajut serat pohon eucalyptus, midsole SweetFoam® berbahan tebu, outsole karet alam FSC.',
-                'sustainability_note' => 'Jejak karbon: 6.90 kg CO2e.',
-                'base_price' => 2150000,
-                'compare_at_price' => null,
+                'category_id' => $womenGourmand->id,
+                'name' => "Parfum Wanita Vanilla Silk & Warm Amber",
+                'slug' => 'womens-vanilla-silk-warm-amber',
+                'short_description' => 'Aroma vanila Madagaskar manis lembut berpadu krim kelapa, gula cokelat, dan kayu cendana.',
+                'description' => '<p>Keharuman manis gourmand yang lezat dan membuat ketagihan. Lembut seperti pelukan sutra kasmir hangat, sempurna untuk malam kencan dan momen istimewa.</p>',
+                'material_info' => 'Top Notes: Madagascar Vanilla Pod, Coconut Milk, Almond Blossom. Heart Notes: Brown Sugar, Heliotrope, Marshmallow Fluff. Base Notes: Warm Amber, Sandalwood, Clean Skin Musk.',
+                'sustainability_note' => 'Vanila organik tersertifikasi fair-trade membantu komunitas petani lokal.',
+                'base_price' => 880000,
+                'compare_at_price' => 980000,
                 'is_active' => true,
                 'is_featured' => true,
-                'weight_grams' => 620,
-                'collections' => array_filter([$newArrivalsCol?->id, $bestSellersCol?->id]),
-                'variants' => [
-                    [
-                        'color_name' => 'Sage Frost',
-                        'color_hex' => '#7d8d7e',
-                        'sizes' => ['36' => 5, '37' => 12, '38' => 20, '39' => 18, '40' => 10, '41' => 3],
-                    ],
-                    [
-                        'color_name' => 'Ocean Navy',
-                        'color_hex' => '#324a5e',
-                        'sizes' => ['36' => 4, '37' => 9, '38' => 14, '39' => 15, '40' => 7],
-                    ],
-                ],
-                'images' => [
-                    ['url' => '/images/products/tree-dasher-sage.png', 'order' => 1, 'is_primary' => true],
-                    ['url' => '/images/products/tree-dasher-navy.png', 'order' => 2, 'is_primary' => false],
-                ],
-            ],
-            [
-                'category_id' => $womenSneakers?->id ?? 1,
-                'name' => "Sepatu Wanita Tree Runner Go",
-                'slug' => 'womens-tree-runner-go',
-                'short_description' => 'Sepatu jalan santai ringan harian dengan serat pohon eucalyptus yang sejuk bernapas.',
-                'description' => '<p>Sepatu andalan untuk segala aktivitas. Empuk, selembut awan, dapat dicuci dengan mesin, dan dibuat secara berkelanjutan untuk kenyamanan kerja hingga akhir pekan.</p>',
-                'material_info' => 'Serat eucalyptus FSC, midsole tebu alami SweetFoam®.',
-                'sustainability_note' => 'Jejak karbon: 4.40 kg CO2e.',
-                'base_price' => 1750000,
-                'compare_at_price' => 1950000,
-                'is_active' => true,
-                'is_featured' => true,
-                'weight_grams' => 540,
-                'collections' => array_filter([$bestSellersCol?->id, $treeCol?->id]),
-                'variants' => [
-                    [
-                        'color_name' => 'Sky Blue (White Sole)',
-                        'color_hex' => '#5c778a',
-                        'sizes' => ['36' => 8, '37' => 16, '38' => 22, '39' => 20, '40' => 14, '41' => 6],
-                    ],
-                    [
-                        'color_name' => 'Pure Blizzard White',
-                        'color_hex' => '#ffffff',
-                        'sizes' => ['36' => 6, '37' => 12, '38' => 19, '39' => 18, '40' => 10, '41' => 4],
-                    ],
-                ],
-                'images' => [
-                    ['url' => '/images/products/tree-runner-blue.png', 'order' => 1, 'is_primary' => true],
-                    ['url' => '/images/products/tree-runner-white.png', 'order' => 2, 'is_primary' => false],
-                ],
-            ],
-            [
-                'category_id' => $womenSlipOns?->id ?? 1,
-                'name' => "Sepatu Wanita Canvas Cruiser Slip On",
-                'slug' => 'womens-canvas-cruiser-slip-on',
-                'short_description' => 'Slip-on kanvas katun organik bersih dan minimalis dengan bantalan penopang kaki.',
-                'description' => '<p>Siluet slip-on klasik yang tampil modern dengan 100% kanvas katun organik, nyaman dipakai langsung tanpa masa penyesuaian. Kasual, bersih, dan membal.</p>',
-                'material_info' => 'Upper 100% kanvas katun organik, insole SweetFoam®.',
-                'sustainability_note' => 'Jejak karbon: 3.85 kg CO2e.',
-                'base_price' => 1450000,
-                'compare_at_price' => null,
-                'is_active' => true,
-                'is_featured' => true,
-                'weight_grams' => 520,
+                'weight_grams' => 340,
                 'collections' => array_filter([$bestSellersCol?->id, $newArrivalsCol?->id]),
                 'variants' => [
                     [
-                        'color_name' => 'Warm White',
+                        'color_name' => 'Warm Vanilla Cream',
                         'color_hex' => '#ded7cd',
-                        'sizes' => ['36' => 6, '37' => 14, '38' => 20, '39' => 18, '40' => 12, '41' => 5],
+                        'sizes' => ['50ml' => 28, '100ml' => 16, '30ml' => 24],
                     ],
                 ],
                 'images' => [
@@ -374,89 +228,103 @@ class ProductSeeder extends Seeder
                 ],
             ],
             [
-                'category_id' => $womenSlipOns?->id ?? 1,
-                'name' => "Sepatu Wanita Cruiser Slip On",
-                'slug' => 'womens-cruiser-slip-on',
-                'short_description' => 'Sneaker slip-on rajut tanpa jahitan untuk kemudahan pemakaian dan kenyamanan ringan.',
-                'description' => '<p>Siluet slip-on abadi dalam balutan warna putih Blizzard. Ringan, lentur, dan siap menemani langkah Anda ke mana pun hari membawa.</p>',
-                'material_info' => 'Upper rajut engineered dengan sol tebu SweetFoam®.',
-                'sustainability_note' => 'Jejak karbon: 4.15 kg CO2e.',
-                'base_price' => 1650000,
+                'category_id' => $womenCitrus->id,
+                'name' => "Parfum Wanita Blanc Pure White Floral EDP",
+                'slug' => 'womens-blanc-pure-white-floral-edp',
+                'short_description' => 'Sentuhan bunga melati putih, bunga lili lembah, dan embun pagi yang murni dan bersih.',
+                'description' => '<p>Sensasi kemurnian sejati. Blanc Pure adalah wewangian floral putih yang bersih, anggun, dan segar seperti linen putih yang tertiup angin musim semi.</p>',
+                'material_info' => 'Top Notes: White Jasmine Sambac, Lily of the Valley, Dewy Green Leaves. Heart Notes: Tuberose, White Freesia, Magnolia. Base Notes: Soft White Cedar, Clean Musk, Ambrette Seed.',
+                'sustainability_note' => 'Formula 100% vegan, cruelty-free, dan bebas alergen berbahaya.',
+                'base_price' => 950000,
                 'compare_at_price' => null,
                 'is_active' => true,
                 'is_featured' => true,
-                'weight_grams' => 530,
-                'collections' => array_filter([$bestSellersCol?->id, $newArrivalsCol?->id]),
+                'weight_grams' => 350,
+                'collections' => array_filter([$bestSellersCol?->id, $botanicalCol?->id]),
                 'variants' => [
                     [
-                        'color_name' => 'Blizzard White',
+                        'color_name' => 'Pure Blanc Crystal',
                         'color_hex' => '#ffffff',
-                        'sizes' => ['36' => 5, '37' => 12, '38' => 18, '39' => 16, '40' => 9, '41' => 3],
+                        'sizes' => ['50ml' => 25, '100ml' => 15, '30ml' => 30],
                     ],
                 ],
                 'images' => [
-                    ['url' => '/images/products/cruiser-slipon-blizzard.png', 'order' => 1, 'is_primary' => true],
+                    ['url' => '/images/products/tree-runner-white.png', 'order' => 1, 'is_primary' => true],
                 ],
             ],
             [
-                'category_id' => $womenSlipOns?->id ?? 1,
-                'name' => "Sepatu Wanita Runner NZ Slip On",
-                'slug' => 'womens-runner-nz-slip-on',
-                'short_description' => 'Sneaker slip-on rajut bergaris dengan peredam kejut benturan premium.',
-                'description' => '<p>Rasakan sensasi berjalan di atas awan dengan Runner NZ Slip On. Kerah rajut elastis yang fleksibel pas seperti kulit kedua sementara SweetFoam® meredam getaran langkah dengan mudah.</p>',
-                'material_info' => 'Upper rajut bergaris dari serat pohon eucalyptus FSC.',
-                'sustainability_note' => 'Jejak karbon: 4.50 kg CO2e.',
-                'base_price' => 1750000,
-                'compare_at_price' => null,
+                'category_id' => $womenExtrait->id,
+                'name' => "Parfum Wanita Crimson Ruby Rose Extrait",
+                'slug' => 'womens-crimson-ruby-rose-extrait',
+                'short_description' => 'Aroma misterius mawar merah pekat, safron Spanyol, dan kayu dupa mewah bertransisi magis.',
+                'description' => '<p>Edisi terbatas Extrait de Parfum dengan konsentrasi tinggi. Memberikan sillage luar biasa yang meninggalkan jejak aroma tak terlupakan ke mana pun Anda melangkah.</p>',
+                'material_info' => 'Top Notes: Spanish Saffron, Red Currant, Pomegranate. Heart Notes: Midnight Rose Absolute, Jasmine Grandiflorum, Incense Smoke. Base Notes: Dark Oud, Patchouli Oil, Black Amber.',
+                'sustainability_note' => 'Minyak atsiri murni hasil distilasi uap mikro tanpa bahan kimia keras.',
+                'base_price' => 1350000,
+                'compare_at_price' => 1500000,
                 'is_active' => true,
                 'is_featured' => true,
-                'weight_grams' => 560,
-                'collections' => array_filter([$bestSellersCol?->id, $newArrivalsCol?->id]),
+                'weight_grams' => 420,
+                'collections' => array_filter([$extraitCol?->id, $bestSellersCol?->id]),
                 'variants' => [
                     [
-                        'color_name' => 'Mushroom Taupe',
-                        'color_hex' => '#b2a496',
-                        'sizes' => ['36' => 7, '37' => 15, '38' => 20, '39' => 18, '40' => 11, '41' => 4],
-                    ],
-                    [
-                        'color_name' => 'Anthracite Charcoal',
-                        'color_hex' => '#444240',
-                        'sizes' => ['36' => 6, '37' => 12, '38' => 17, '39' => 15, '40' => 10, '41' => 3],
+                        'color_name' => 'Crimson Ruby Flacon',
+                        'color_hex' => '#9e4747',
+                        'sizes' => ['50ml' => 15, '100ml' => 10, '30ml' => 12],
                     ],
                 ],
                 'images' => [
-                    ['url' => '/images/products/runner-nz-mushroom.png', 'order' => 1, 'is_primary' => true],
-                    ['url' => '/images/products/runner-nz-anthracite.png', 'order' => 2, 'is_primary' => false],
+                    ['url' => '/images/products/tree-dasher-red.png', 'order' => 1, 'is_primary' => true],
+                ],
+            ],
+            [
+                'category_id' => $womenAmber->id,
+                'name' => "Parfum Wanita Terracotta Spiced Chai EDP",
+                'slug' => 'womens-terracotta-spiced-chai-edp',
+                'short_description' => 'Perpaduan kayu manis hangat, kapulaga India, susu rempah, dan kayu cedar cokelat.',
+                'description' => '<p>Wewangian hangat bernuansa bumi yang unik dan eksotis. Memberikan ketenangan jiwa dan rasa nyaman sepanjang hari seperti menikmati secangkir chai tea hangat di sore yang sejuk.</p>',
+                'material_info' => 'Top Notes: Ceylon Cinnamon, Cardamom Pods, Bergamot. Heart Notes: Chai Milk Accord, Nutmeg, Star Anise. Base Notes: Virginian Cedar, Sandalwood, Benzoin Resin.',
+                'sustainability_note' => 'Bahan rempah organik berstandar internasional.',
+                'base_price' => 840000,
+                'compare_at_price' => null,
+                'is_active' => true,
+                'is_featured' => false,
+                'weight_grams' => 330,
+                'collections' => array_filter([$botanicalCol?->id]),
+                'variants' => [
+                    [
+                        'color_name' => 'Terracotta Amber',
+                        'color_hex' => '#b87358',
+                        'sizes' => ['50ml' => 20, '100ml' => 12, '30ml' => 18],
+                    ],
+                ],
+                'images' => [
+                    ['url' => '/images/products/tree-lounger-terracotta.png', 'order' => 1, 'is_primary' => true],
                 ],
             ],
 
             // ----------------------------------------------------
-            // APPAREL & ACCESSORIES
+            // DISCOVERY SETS & TRAVEL GIFTS
             // ----------------------------------------------------
             [
-                'category_id' => $menTees?->id ?? 1,
-                'name' => "Kaos Pria Sea Tee Classic",
-                'slug' => 'mens-sea-tee-classic',
-                'short_description' => 'Kaos harian lembut dan sejuk dari perpaduan katun organik dan serat alami cangkang kepiting.',
-                'description' => '<p>Kenalkan kaos alami paling inovatif di dunia. Dipadukan dengan Kitosan (serat terbarukan dari cangkang kepiting) dan katun Pima Peru organik agar tetap segar lebih lama secara alami.</p>',
-                'material_info' => '65% Katun Pima Peru Organik, 35% SeaCell™ Lyocell dengan Kitosan.',
-                'sustainability_note' => 'Jejak karbon: 6.30 kg CO2e. 100% alami dan bebas mikroplastik.',
-                'base_price' => 650000,
-                'compare_at_price' => 750000,
+                'category_id' => $menSet->id,
+                'name' => "FIFA Men's Discovery Set (5 x 10ml)",
+                'slug' => 'fifa-mens-discovery-set',
+                'short_description' => 'Set sampel lengkap 5 varian parfum pria terlaris FIFA dalam kemasan travel spray mewah.',
+                'description' => '<p>Temukan aroma signature Anda sebelum membeli botol penuh. Set berisi 5 botol mini 10ml: Aurora Blue, Obsidian Noir Oud, Sage Vetiver, Smoky Tobacco, dan Citrus Breeze.</p>',
+                'material_info' => '5 botol kaca mini 10ml atomizer semprot halus dengan box hardcase bertekstur linen mewah.',
+                'sustainability_note' => '100% kemasan kertas daur ulang bersertifikasi FSC.',
+                'base_price' => 450000,
+                'compare_at_price' => 550000,
                 'is_active' => true,
                 'is_featured' => false,
                 'weight_grams' => 250,
                 'collections' => array_filter([$newArrivalsCol?->id, $saleCol?->id]),
                 'variants' => [
                     [
-                        'color_name' => 'Natural White',
-                        'color_hex' => '#ffffff',
-                        'sizes' => ['S' => 10, 'M' => 20, 'L' => 25, 'XL' => 15],
-                    ],
-                    [
-                        'color_name' => 'Classic Charcoal',
+                        'color_name' => 'Matte Black Box Set',
                         'color_hex' => '#2b2b2b',
-                        'sizes' => ['S' => 8, 'M' => 18, 'L' => 20, 'XL' => 12],
+                        'sizes' => ['5x10ml' => 50],
                     ],
                 ],
                 'images' => [
@@ -464,54 +332,24 @@ class ProductSeeder extends Seeder
                 ],
             ],
             [
-                'category_id' => $menSocks?->id ?? 1,
-                'name' => "Kaos Kaki Trino™ Tubers Crew",
-                'slug' => 'trino-tubers-crew-socks',
-                'short_description' => 'Kaos kaki crew harian yang bernapas dari perpaduan serat pohon eucalyptus dan wol merino.',
-                'description' => '<p>Kaos kaki ternyaman di dunia. Dirancang dengan benang Trino™ eksklusif kami yang memadukan serat pohon eucalyptus sejuk dan wol merino ZQ lembut.</p>',
-                'material_info' => '50% TENCEL™ Lyocell, 35% Wol Merino ZQ, 12% Nilon Daur Ulang, 3% Spandex.',
-                'sustainability_note' => 'Jejak karbon: 1.20 kg CO2e.',
-                'base_price' => 250000,
-                'compare_at_price' => null,
-                'is_active' => true,
-                'is_featured' => false,
-                'weight_grams' => 100,
-                'collections' => array_filter([$bestSellersCol?->id]),
-                'variants' => [
-                    [
-                        'color_name' => 'Heather Grey',
-                        'color_hex' => '#888582',
-                        'sizes' => ['S/M' => 30, 'L/XL' => 40],
-                    ],
-                    [
-                        'color_name' => 'Natural Black',
-                        'color_hex' => '#212121',
-                        'sizes' => ['S/M' => 25, 'L/XL' => 35],
-                    ],
-                ],
-                'images' => [
-                    ['url' => '/images/products/wool-runner-grey.png', 'order' => 1, 'is_primary' => true],
-                ],
-            ],
-            [
-                'category_id' => $bags?->id ?? 1,
-                'name' => "Tas fifa Anytime Tote Bag",
-                'slug' => 'fifa-anytime-tote-bag',
-                'short_description' => 'Tote bag kanvas katun organik kokoh untuk belanja, pantai, dan perjalanan harian.',
-                'description' => '<p>Kapasitas lapang, tali bahu diperkuat, dan kantong internal untuk barang esensial Anda. Dibuat dari 100% kanvas katun organik tebal untuk menggantikan plastik sekali pakai selamanya.</p>',
-                'material_info' => '100% Kanvas Katun Organik Tebal (14oz).',
-                'sustainability_note' => 'Jejak karbon: 2.10 kg CO2e.',
+                'category_id' => $womenSet->id,
+                'name' => "FIFA Women's Discovery Set (5 x 10ml)",
+                'slug' => 'fifa-womens-discovery-set',
+                'short_description' => 'Set sampel lengkap 5 varian parfum wanita favorit FIFA dalam kemasan gift box elegan.',
+                'description' => '<p>Kado sempurna untuk diri sendiri atau orang tersayang. Berisi 5 botol mini 10ml: Rose Velvet, Vanilla Silk, Blanc Pure, Crimson Ruby Rose, dan Terracotta Chai.</p>',
+                'material_info' => '5 botol kaca mini 10ml atomizer semprot halus dalam kotak hadiah kasmir putih.',
+                'sustainability_note' => 'Kemasan ramah lingkungan bebas plastik sekali pakai.',
                 'base_price' => 450000,
                 'compare_at_price' => 550000,
                 'is_active' => true,
                 'is_featured' => false,
-                'weight_grams' => 350,
-                'collections' => array_filter([$newArrivalsCol?->id]),
+                'weight_grams' => 250,
+                'collections' => array_filter([$newArrivalsCol?->id, $saleCol?->id]),
                 'variants' => [
                     [
-                        'color_name' => 'Natural Canvas',
-                        'color_hex' => '#e8e2d5',
-                        'sizes' => ['One Size' => 50],
+                        'color_name' => 'Pearl White Box Set',
+                        'color_hex' => '#ffffff',
+                        'sizes' => ['5x10ml' => 45],
                     ],
                 ],
                 'images' => [
@@ -560,7 +398,7 @@ class ProductSeeder extends Seeder
             $varIndex = 1;
             foreach ($data['variants'] as $varGroup) {
                 foreach ($varGroup['sizes'] as $size => $stock) {
-                    $sku = 'FIF-' . str_pad($product->id, 3, '0', STR_PAD_LEFT) . '-' . strtoupper(substr(Str::slug($varGroup['color_name']), 0, 4)) . '-' . $size . '-' . $varIndex;
+                    $sku = 'FIF-PRF-' . str_pad($product->id, 3, '0', STR_PAD_LEFT) . '-' . strtoupper(substr(Str::slug($varGroup['color_name']), 0, 4)) . '-' . $size . '-' . $varIndex;
                     ProductVariant::create([
                         'product_id' => $product->id,
                         'sku' => $sku,
@@ -582,21 +420,22 @@ class ProductSeeder extends Seeder
                     'product_id' => $product->id,
                     'user_id' => $user->id,
                     'rating' => 5,
-                    'title' => 'Sepatu paling nyaman yang pernah saya pakai!',
-                    'comment' => 'Materialnya sangat sejuk di kaki dan solnya empuk luar biasa. Dipakai jalan seharian tidak membuat pegal sama sekali.',
+                    'title' => 'Aroma luar biasa mewah & tahan seharian!',
+                    'comment' => 'Wanginya sangat elegan dan tidak menyengat di hidung. Sillage dan ketahanannya di kulit lebih dari 12 jam. Banyak teman kantor yang menanyakan parfum apa yang saya pakai!',
                     'is_approved' => true,
                 ]);
                 Review::create([
                     'product_id' => $product->id,
                     'user_id' => $user->id,
                     'rating' => 5,
-                    'title' => 'Sangat berkualitas dan ramah lingkungan',
-                    'comment' => 'Desainnya clean, minimalis, dan sangat cocok dipadukan dengan celana apapun. Worth every penny!',
+                    'title' => 'Kualitas parfum niche dengan botol estetik',
+                    'comment' => 'Kemasan botol kacanya tebal dan terasa solid, atomizernya menyemprotkan partikel wangi yang sangat halus. 100% recommended untuk hadiah maupun pemakaian pribadi!',
                     'is_approved' => true,
                 ]);
             }
         }
 
-        echo "ProductSeeder completed: " . count($productsData) . " rich products with transparent PNGs and variants seeded.\n";
+        echo "ProductSeeder completed: " . count($productsData) . " rich perfume products with transparent PNGs and variants seeded.\n";
     }
 }
+

@@ -105,7 +105,7 @@
         <a href="{{ route('home') }}" class="hover:text-charcoal">Beranda</a>
         <span>/</span>
         <a href="{{ route('collections.show', $product->category->slug ?? 'all') }}" class="hover:text-charcoal">
-            {{ $product->category->name ?? 'Sepatu' }}
+            {{ $product->category->name ?? 'Parfum' }}
         </a>
         <span>/</span>
         <span class="text-charcoal truncate">{{ $product->name }}</span>
@@ -397,11 +397,11 @@
                                         </div>
                                         <div>
                                             <label class="block text-caption font-bold uppercase text-charcoal mb-1">Judul Ulasan</label>
-                                            <input type="text" name="title" required placeholder="Misal: Sepatu ternyaman yang pernah saya pakai" class="input-clean w-full text-body-sm">
+                                            <input type="text" name="title" required placeholder="Misal: Aroma mewah dan sangat tahan lama seharian" class="input-clean w-full text-body-sm">
                                         </div>
                                         <div>
                                             <label class="block text-caption font-bold uppercase text-charcoal mb-1">Komentar / Pengalaman</label>
-                                            <textarea name="comment" rows="3" required placeholder="Ceritakan bagaimana kenyamanan dan fitting sepatu ini di kaki Anda..." class="input-clean w-full text-body-sm"></textarea>
+                                            <textarea name="comment" rows="3" required placeholder="Ceritakan bagaimana karakter aroma, sillage, dan ketahanan parfum ini saat Anda kenakan..." class="input-clean w-full text-body-sm"></textarea>
                                         </div>
                                         <div class="flex justify-end gap-2">
                                             <button type="button" @click="reviewFormOpen = false" class="btn-pill-light text-caption px-4 py-1.5">Batal</button>

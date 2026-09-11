@@ -1,17 +1,17 @@
 @extends('layouts.app')
 
-@section('title', 'fifa Journal — Kisah Material Alami & Keberlanjutan')
+@section('title', 'fifa Fragrance Journal — Kisah Bahan Alami & Olfactive Notes')
 
 @section('content')
 <!-- Header Hero -->
 <div class="bg-sand/20 border-b border-sand py-12 sm:py-16 text-center">
     <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
-        <span class="text-caption font-bold uppercase tracking-wide10 text-stone block mb-2">Cerita & Jurnal Kami</span>
+        <span class="text-caption font-bold uppercase tracking-wide10 text-stone block mb-2">Cerita & Jurnal Aroma</span>
         <h1 class="font-display font-normal text-3xl sm:text-4xl lg:text-5xl text-charcoal tracking-tight">
-            The fifa Journal
+            The fifa Fragrance Journal
         </h1>
         <p class="text-body text-iron max-w-xl mx-auto mt-4 leading-relaxed">
-            Inspirasi desain sepatu, inovasi material wol dan pohon terbarukan, serta komitmen kami untuk jejak karbon nol.
+            Eksplorasi piramida aroma, seni distilasi botani alami dari Grasse hingga Madagaskar, serta panduan memilih wewangian abadi.
         </p>
     </div>
 </div>

@@ -181,13 +181,13 @@ function fifaChatbot() {
         isTyping: false,
         messages: [],
         quickPrompts: [
-            { label: 'Rekomendasi Terlaris', text: 'Rekomendasi sepatu paling laris dan favorit' },
-            { label: 'Panduan Ukuran', text: 'Bagaimana cara memilih ukuran sepatu yang tepat?' },
-            { label: 'Material Alami', text: 'Apa saja material alami yang digunakan fifa?' },
-            { label: 'Status Pengiriman', text: 'Berapa lama estimasi pengiriman dan biaya ongkir?' },
-            { label: 'Garansi 30 Hari', text: 'Bagaimana ketentuan garansi uji coba 30 hari?' },
-            { label: 'Koleksi Pria', text: 'Lihat koleksi sepatu untuk pria' },
-            { label: 'Koleksi Wanita', text: 'Lihat koleksi sepatu untuk wanita' }
+            { label: 'Rekomendasi Terlaris', text: 'Rekomendasi parfum paling laris dan favorit' },
+            { label: 'Panduan Aroma (Notes)', text: 'Bagaimana cara memilih karakter aroma yang cocok?' },
+            { label: 'Ketahanan & Konsentrasi', text: 'Berapa lama ketahanan parfum EDP dan Extrait fifa?' },
+            { label: 'Bahan Alami Botani', text: 'Apa saja ekstrak bahan alami yang digunakan fifa Fragrance?' },
+            { label: 'Status Pengiriman', text: 'Berapa lama estimasi pengiriman dan batas gratis ongkir?' },
+            { label: 'Koleksi Pria', text: 'Lihat koleksi parfum pria' },
+            { label: 'Koleksi Wanita', text: 'Lihat koleksi parfum wanita' }
         ],
 
         init() {
@@ -201,11 +201,11 @@ function fifaChatbot() {
             this.messages = [
                 {
                     sender: 'bot',
-                    text: 'Halo, selamat datang di <strong>fifa</strong>.<br><br>Saya asisten fifa, siap membantu Anda menemukan model sepatu yang sesuai, panduan ukuran, informasi bahan alami, atau status pesanan. Ada yang bisa dibantu?',
+                    text: 'Halo, selamat datang di <strong>fifa Fragrance</strong>.<br><br>Saya asisten fifa, siap membantu Anda menemukan karakter aroma impian, rekomendasi piramida aroma (Top, Heart, Base notes), atau informasi pesanan. Ada aroma spesifik yang sedang Anda cari?',
                     links: [
-                        { label: 'Sepatu Pria', url: '{{ route('categories.men') }}' },
-                        { label: 'Sepatu Wanita', url: '{{ route('categories.women') }}' },
-                        { label: 'Produk Terlaris', url: '{{ route('collections.show', 'best-sellers') }}' }
+                        { label: 'Parfum Pria', url: '{{ route('categories.men') }}' },
+                        { label: 'Parfum Wanita', url: '{{ route('categories.women') }}' },
+                        { label: 'Discovery Sets', url: '{{ route('collections.show', 'discovery-sets') }}' }
                     ]
                 }
             ];
@@ -242,54 +242,67 @@ function fifaChatbot() {
             if (q.includes('terlaris') || q.includes('rekomendasi') || q.includes('favorit') || q.includes('populer') || q.includes('best seller')) {
                 return {
                     sender: 'bot',
-                    text: 'Berikut adalah model sepatu favorit pilihan pelanggan fifa:<br><br>' +
-                          '&bull; <strong>Tree Dasher 2</strong>: Sepatu lari responsif dan sejuk dari serat pohon eukaliptus.<br>' +
-                          '&bull; <strong>Wool Runner 2</strong>: Sneakers kasual harian dari wol ZQ Merino alami.<br>' +
-                          '&bull; <strong>Tree Lounger</strong>: Model slip-on santai yang sangat ringan dan praktis.',
+                    text: 'Berikut adalah varian aroma mahakarya terlaris dari fifa Fragrance:<br><br>' +
+                          '&bull; <strong>Aurora Blue EDP</strong>: Kesegaran laut Mediterania dengan Calabrian Bergamot & Ambergris.<br>' +
+                          '&bull; <strong>Rose Velvet Nectar</strong>: Keanggunan Grasse Rose, French Vanilla, dan aroma kelopak lembut.<br>' +
+                          '&bull; <strong>Obsidian Oud Extrait</strong>: Kehangatan kayu Oud mewah, Smokey Leather, dan Ambergris tahan hingga 14 jam.',
                     links: [
-                        { label: 'Lihat Semua Terlaris', url: '{{ route('collections.show', 'best-sellers') }}' },
-                        { label: 'Koleksi Terbaru', url: '{{ route('collections.show', 'new-arrivals') }}' }
+                        { label: 'Lihat Semua Koleksi', url: '{{ route('collections.show', 'best-sellers') }}' },
+                        { label: 'Discovery Sets', url: '{{ route('collections.show', 'discovery-sets') }}' }
                     ]
                 };
             }
 
-            // 2. Ukuran / Sizing / Size Guide
-            if (q.includes('ukuran') || q.includes('size') || q.includes('sempit') || q.includes('kebesaran') || q.includes('pas')) {
+            // 2. Aroma / Notes / Scent Family
+            if (q.includes('aroma') || q.includes('notes') || q.includes('wangi') || q.includes('karakter') || q.includes('scent') || q.includes('bau')) {
                 return {
                     sender: 'bot',
-                    text: '<strong>Panduan Memilih Ukuran fifa:</strong><br><br>' +
-                          '&bull; Sebagian besar sepatu fifa berukuran standar (<em>True to Size</em>).<br>' +
-                          '&bull; Untuk kaki yang lebih lebar atau berada di antara dua ukuran, disarankan untuk <strong>naik 1 ukuran</strong> (misalnya dari 41.5 ke 42).<br>' +
-                          '&bull; Material wol Merino kami akan sedikit menyesuaikan dengan bentuk kaki Anda seiring pemakaian.',
+                    text: '<strong>Keluarga Aroma (Olfactive Families) fifa:</strong><br><br>' +
+                          '&bull; <strong>Fresh Citrus & Aquatic</strong>: Bergamot, Sea Salt, Sage (cocok siang hari & tropis).<br>' +
+                          '&bull; <strong>Floral & Sweet</strong>: Damask Rose, Jasmine Sambac, Madagascan Vanilla.<br>' +
+                          '&bull; <strong>Woody & Oriental</strong>: Royal Agarwood, Sandalwood, Cashmere Wood, Warm Amber.',
                     links: [
-                        { label: 'Panduan Ukuran Lengkap', url: '{{ route('pages.show', 'size-guide') }}' }
+                        { label: 'Eksplorasi Katalog', url: '{{ route('collections.show', 'best-sellers') }}' }
                     ]
                 };
             }
 
-            // 3. Material / Bahan Alami / Keberlanjutan
-            if (q.includes('material') || q.includes('bahan') || q.includes('alami') || q.includes('wol') || q.includes('pohon') || q.includes('eukaliptus') || q.includes('tebu') || q.includes('ramah lingkungan')) {
+            // 3. Ketahanan / Longevity / Konsentrasi
+            if (q.includes('tahan') || q.includes('longevity') || q.includes('edp') || q.includes('extrait') || q.includes('konsentrasi') || q.includes('awet')) {
                 return {
                     sender: 'bot',
-                    text: 'fifa menggunakan material alami terbarukan untuk menggantikan bahan sintetis berbasis plastik:<br><br>' +
-                          '&bull; <strong>ZQ Merino Wool</strong>: Wol alami lembut, nyaman, dan tidak menimbulkan gatal.<br>' +
-                          '&bull; <strong>Tree Fiber (Eukaliptus)</strong>: Serat pohon sejuk bernapas dan halus.<br>' +
-                          '&bull; <strong>SweetFoam™</strong>: Sol empuk berbahan dasar tebu manis ramah lingkungan.',
+                    text: '<strong>Ketahanan Aroma fifa Fragrance:</strong><br><br>' +
+                          '&bull; <strong>Eau de Parfum (EDP)</strong>: Konsentrasi minyak wangi 18-22%, tahan <strong>8-10 jam</strong> di kulit & pakaian.<br>' +
+                          '&bull; <strong>Extrait de Parfum</strong>: Konsentrasi konsentrat murni 30-35%, tahan <strong>12-16 jam</strong> dengan sillage istimewa.<br>' +
+                          '&bull; Tips: Semprotkan pada titik nadi (leher, pergelangan tangan, dada) setelah memakai pelembap.',
                     links: [
-                        { label: 'Keberlanjutan fifa', url: '{{ route('pages.show', 'sustainability') }}' }
+                        { label: 'Koleksi Extrait & EDP', url: '{{ route('collections.show', 'best-sellers') }}' }
                     ]
                 };
             }
 
-            // 4. Pengiriman / Ongkir / Estimasi
+            // 4. Material / Bahan Alami / Botani
+            if (q.includes('material') || q.includes('bahan') || q.includes('alami') || q.includes('organik') || q.includes('botani') || q.includes('distilasi')) {
+                return {
+                    sender: 'bot',
+                    text: 'fifa Fragrance menggunakan 100% konsentrat botani murni yang dipanen secara etis:<br><br>' +
+                          '&bull; <strong>Grasse Rose & Jasmine</strong>: Panen tangan di Prancis Selatan.<br>' +
+                          '&bull; <strong>Sustainably Sourced Oud & Sandalwood</strong>: Kayu berkualitas dari perkebunan terkelola.<br>' +
+                          '&bull; <strong>Organic Sugar Alcohol</strong>: Pelarut alami ramah kulit tanpa bahan kimia berbahaya.',
+                    links: [
+                        { label: 'Filosofi Bahan Alami', url: '{{ route('pages.show', 'sustainability') }}' }
+                    ]
+                };
+            }
+
+            // 5. Pengiriman / Ongkir / Estimasi
             if (q.includes('ongkir') || q.includes('kirim') || q.includes('pengiriman') || q.includes('gratis') || q.includes('ekspedisi') || q.includes('resi')) {
                 return {
                     sender: 'bot',
                     text: '<strong>Informasi Pengiriman fifa:</strong><br><br>' +
-                          '&bull; <strong>Gratis Ongkir</strong> untuk setiap pesanan minimal <strong>Rp 500.000</strong> ke seluruh Indonesia.<br>' +
-                          '&bull; Estimasi pengiriman pulau Jawa: 1-3 hari kerja.<br>' +
-                          '&bull; Luar pulau Jawa: 3-5 hari kerja.<br>' +
-                          '&bull; Resi otomatis tercatat di akun setelah paket diproses.',
+                          '&bull; <strong>Gratis Ongkir</strong> untuk setiap pesanan minimal <strong>Rp 300.000</strong> ke seluruh Indonesia.<br>' +
+                          '&bull; Dilengkapi kemasan bantalan khusus anti-benturan botol kaca tebal.<br>' +
+                          '&bull; Estimasi pengiriman pulau Jawa: 1-3 hari kerja; Luar pulau Jawa: 3-5 hari kerja.',
                     links: [
                         { label: 'Keranjang Belanja', url: '{{ route('cart.index') }}' },
                         { label: 'Status Pesanan', url: '{{ auth()->check() ? route('account.orders.index') : route('login') }}' }
@@ -297,61 +310,50 @@ function fifaChatbot() {
                 };
             }
 
-            // 5. Garansi / Retur / Pengembalian 30 Hari
-            if (q.includes('garansi') || q.includes('retur') || q.includes('kembali') || q.includes('tukar') || q.includes('30 hari') || q.includes('uji coba')) {
+            // 6. Garansi / Retur / Sampel
+            if (q.includes('garansi') || q.includes('retur') || q.includes('kembali') || q.includes('tukar') || q.includes('sampel') || q.includes('pecah')) {
                 return {
                     sender: 'bot',
-                    text: '<strong>Garansi Uji Coba 30 Hari:</strong><br><br>' +
-                          'Nikmati garansi uji coba selama <strong>30 hari</strong>. Jika ukuran tidak sesuai atau kurang nyaman, Anda dapat mengajukan penukaran atau pengembalian dengan mudah.',
+                    text: '<strong>Garansi Pengiriman & Kualitas:</strong><br><br>' +
+                          'Jika botol parfum Anda tiba dalam kondisi rusak atau pecah di perjalanan, kami memberikan <strong>garansi penggantian 100% baru</strong> tanpa biaya tambahan.',
                     links: [
-                        { label: 'Kebijakan Garansi & Retur', url: '{{ route('pages.show', 'faq') }}' }
+                        { label: 'FAQ & Bantuan', url: '{{ route('pages.show', 'faq') }}' }
                     ]
                 };
             }
 
-            // 6. Koleksi Pria
-            if (q.includes('pria') || q.includes('men') || q.includes('cowok')) {
+            // 7. Koleksi Pria
+            if (q.includes('pria') || q.includes('men') || q.includes('cowok') || q.includes('maskulin')) {
                 return {
                     sender: 'bot',
-                    text: 'Koleksi sepatu pria fifa mencakup sepatu lari (Tree Dasher), kasual wol (Wool Runner), serta model slip-on santai (Tree Lounger).',
+                    text: 'Koleksi parfum pria fifa menghadirkan aroma maskulin segar, woody aromatik, dan amber yang memikat: Aurora Blue, Obsidian Oud, Sage Elixir, dan Coastal Vetiver.',
                     links: [
-                        { label: 'Sepatu Pria', url: '{{ route('categories.men') }}' }
+                        { label: 'Parfum Pria', url: '{{ route('categories.men') }}' }
                     ]
                 };
             }
 
-            // 7. Koleksi Wanita
-            if (q.includes('wanita') || q.includes('women') || q.includes('cewek')) {
+            // 8. Koleksi Wanita
+            if (q.includes('wanita') || q.includes('women') || q.includes('cewek') || q.includes('feminin')) {
                 return {
                     sender: 'bot',
-                    text: 'Koleksi sepatu wanita fifa dirancang ringan dan fleksibel dengan palet warna alami elegan: sepatu lari, sneakers wol, dan flat slip-on.',
+                    text: 'Koleksi parfum wanita fifa menawarkan keanggunan floral mewah, vanilla gourmand manis, dan kesegaran buah segar: Rose Velvet Nectar, Vanilla Silk Supreme, Peony Bloom, dan Jasmine Noir.',
                     links: [
-                        { label: 'Sepatu Wanita', url: '{{ route('categories.women') }}' }
+                        { label: 'Parfum Wanita', url: '{{ route('categories.women') }}' }
                     ]
                 };
             }
 
-            // 8. Lokasi Toko
-            if (q.includes('toko') || q.includes('outlet') || q.includes('store') || q.includes('lokasi') || q.includes('offline')) {
+            // 9. Perawatan Botol Parfum
+            if (q.includes('simpan') || q.includes('rawat') || q.includes('rusak') || q.includes('tahan lama')) {
                 return {
                     sender: 'bot',
-                    text: 'Kunjungi toko resmi fifa untuk mencoba langsung sepatu berbahan alami kami.',
+                    text: '<strong>Tips Menyimpan Parfum Agar Formula Awet:</strong><br><br>' +
+                          '&bull; Simpan di tempat sejuk dan kering terhindar dari sinar matahari langsung.<br>' +
+                          '&bull; Hindari menyimpan botol di kamar mandi yang lembap dan bersuhu fluktuatif.<br>' +
+                          '&bull; Pastikan tutup sprayer selalu terpasang rapat setelah digunakan.',
                     links: [
-                        { label: 'Lokasi Toko fifa', url: '{{ route('stores.index') }}' }
-                    ]
-                };
-            }
-
-            // 9. Perawatan Sepatu
-            if (q.includes('cuci') || q.includes('rawat') || q.includes('bersih') || q.includes('laundry')) {
-                return {
-                    sender: 'bot',
-                    text: '<strong>Panduan Perawatan Sepatu:</strong><br><br>' +
-                          '&bull; Lepaskan tali dan insole sebelum mencuci.<br>' +
-                          '&bull; Dapat dicuci mesin (siklus lembut air dingin).<br>' +
-                          '&bull; Cukup angin-anginkan di tempat teduh (hindari pengering panas).',
-                    links: [
-                        { label: 'FAQ Perawatan', url: '{{ route('pages.show', 'faq') }}' }
+                        { label: 'Panduan Simpan', url: '{{ route('pages.show', 'shoe-care') }}' }
                     ]
                 };
             }
@@ -359,11 +361,11 @@ function fifaChatbot() {
             // Fallback default
             return {
                 sender: 'bot',
-                text: 'Saya dapat membantu Anda seputar rekomendasi sepatu, panduan ukuran, bahan alami, info gratis ongkir, atau garansi 30 hari fifa. Silakan pilih topik di bawah atau ketik pertanyaan Anda.',
+                text: 'Saya dapat membantu Anda seputar rekomendasi parfum terlaris, panduan piramida aroma, bahan botani alami, info gratis ongkir, atau cara menyimpan parfum. Silakan pilih topik di bawah atau ketik aroma yang Anda cari.',
                 links: [
-                    { label: 'Sepatu Pria', url: '{{ route('categories.men') }}' },
-                    { label: 'Sepatu Wanita', url: '{{ route('categories.women') }}' },
-                    { label: 'FAQ', url: '{{ route('pages.show', 'faq') }}' }
+                    { label: 'Parfum Pria', url: '{{ route('categories.men') }}' },
+                    { label: 'Parfum Wanita', url: '{{ route('categories.women') }}' },
+                    { label: 'Discovery Sets', url: '{{ route('collections.show', 'discovery-sets') }}' }
                 ]
             };
         },

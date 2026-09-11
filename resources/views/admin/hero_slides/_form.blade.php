@@ -47,7 +47,7 @@
                    id="title" 
                    value="{{ old('title', $heroSlide->title ?? '') }}" 
                    required 
-                   placeholder="Misal: We Made The World's Most Comfortable Shoes" 
+                   placeholder="Misal: Mahakarya Botani, Keharuman Abadi" 
                    class="input-clean w-full text-body font-bold @error('title') border-red-500 @enderror">
         </div>
 

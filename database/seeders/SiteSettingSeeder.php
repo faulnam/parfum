@@ -11,10 +11,10 @@ class SiteSettingSeeder extends Seeder
     {
         $settings = [
             ['key' => 'store_name', 'value' => 'fifa', 'group' => 'general'],
-            ['key' => 'store_email', 'value' => 'help@fifa.test', 'group' => 'general'],
+            ['key' => 'store_email', 'value' => 'concierge@fifa.test', 'group' => 'general'],
             ['key' => 'store_phone', 'value' => '0812-3456-7890', 'group' => 'general'],
-            ['key' => 'announcement_text', 'value' => 'Gratis ongkir untuk pesanan di atas Rp 500.000 | Garansi uji coba 30 hari untuk semua sepatu | 100% Bahan Alami & Ramah Lingkungan | Pengiriman cepat ke seluruh Indonesia', 'group' => 'general'],
-            ['key' => 'free_shipping_threshold', 'value' => '500000', 'group' => 'shipping'],
+            ['key' => 'announcement_text', 'value' => 'Gratis ongkir untuk pesanan di atas Rp 300.000 | Ekstrak Botani Alami & Minyak Atsiri Murni | Ketahanan Hingga 14+ Jam | Garansi Pengiriman Aman Botol Kaca ke Seluruh Indonesia', 'group' => 'general'],
+            ['key' => 'free_shipping_threshold', 'value' => '300000', 'group' => 'shipping'],
             ['key' => 'origin_address', 'value' => 'Jl. Jenderal Sudirman Kav. 52-53, SCBD', 'group' => 'shipping'],
             ['key' => 'origin_postal_code', 'value' => '12190', 'group' => 'shipping'],
             ['key' => 'origin_biteship_area_id', 'value' => 'IDNP6IDNC148IDND859', 'group' => 'shipping'],
@@ -33,3 +33,4 @@ class SiteSettingSeeder extends Seeder
         }
     }
 }
+
